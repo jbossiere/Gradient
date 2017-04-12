@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,17 +25,23 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-go-zx6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac3-IQ-tsb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac3-IQ-tsb">
                                 <rect key="frame" x="300" y="587" width="69" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="cY8-bh-g9j"/>
+                                    <constraint firstAttribute="height" constant="69" id="eTR-PN-oQf"/>
+                                </constraints>
                                 <state key="normal" image="fab"/>
                                 <connections>
                                     <segue destination="OTo-ye-pwf" kind="presentation" id="Gl0-3T-bzL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4z-DC-tvc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4z-DC-tvc">
                                 <rect key="frame" x="304" y="533" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Knx-lA-Zc9"/>
+                                    <constraint firstAttribute="width" constant="60" id="Lga-jI-ncJ"/>
+                                </constraints>
                                 <state key="normal" image="current-location-icon"/>
                                 <connections>
                                     <action selector="locateMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NVk-dY-XNW"/>
@@ -45,8 +52,12 @@
                         <constraints>
                             <constraint firstItem="oEh-go-zx6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="28V-6l-4Sh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oEh-go-zx6" secondAttribute="bottom" id="4IA-AF-ObG"/>
+                            <constraint firstAttribute="trailing" secondItem="h4z-DC-tvc" secondAttribute="trailing" constant="11" id="Fa3-5n-Drh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h4z-DC-tvc" secondAttribute="bottom" constant="74" id="VAY-ls-BPj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ac3-IQ-tsb" secondAttribute="bottom" constant="11" id="b2F-wt-Upl"/>
                             <constraint firstItem="oEh-go-zx6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bm2-NO-Asb"/>
                             <constraint firstAttribute="trailing" secondItem="oEh-go-zx6" secondAttribute="trailing" id="ljG-gA-aNg"/>
+                            <constraint firstAttribute="trailing" secondItem="ac3-IQ-tsb" secondAttribute="trailing" constant="6" id="tJj-Yt-APb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -71,34 +82,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnP-vf-76Y">
-                                <rect key="frame" x="67" y="197" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="How was the parking here?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnP-vf-76Y">
+                                <rect key="frame" x="78" y="172" width="218" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e7-IH-I84">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e7-IH-I84">
                                 <rect key="frame" x="24" y="36" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="n6k-fz-4VB"/>
+                                    <constraint firstAttribute="width" constant="22" id="rUp-RV-gMN"/>
+                                </constraints>
                                 <state key="normal" image="close-icon"/>
                                 <connections>
                                     <action selector="dismissModal:" destination="OTo-ye-pwf" eventType="touchUpInside" id="B2W-6t-SM3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysK-tY-Amj">
+                                <rect key="frame" x="148" y="249" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="neutral-icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FA-Aa-Vj4">
+                                <rect key="frame" x="24" y="249" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="busy-icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsx-nS-wnv">
+                                <rect key="frame" x="272" y="249" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="open-icon"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Busy" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gal-51-RaI">
+                                <rect key="frame" x="43" y="337" width="42" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Neutral" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zzw-90-393">
+                                <rect key="frame" x="159" y="337" width="58" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Open" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1O1-9g-M7a">
+                                <rect key="frame" x="290" y="337" width="45" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mss-eg-l3i">
+                                <rect key="frame" x="133" y="456" width="111" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="send-button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3e7-IH-I84" firstAttribute="leading" secondItem="ZRK-wo-hiB" secondAttribute="leadingMargin" constant="8" id="1a6-M3-S0Y"/>
+                            <constraint firstItem="3e7-IH-I84" firstAttribute="top" secondItem="qPP-Ep-mH3" secondAttribute="bottom" constant="16" id="koD-dw-W66"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpy-Jw-ASU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847" y="124"/>
+            <point key="canvasLocation" x="845.60000000000002" y="123.68815592203899"/>
         </scene>
     </scenes>
     <resources>
+        <image name="busy-icon" width="80" height="80"/>
         <image name="close-icon" width="22" height="22"/>
         <image name="current-location-icon" width="64" height="64"/>
         <image name="fab" width="104" height="104"/>
+        <image name="neutral-icon" width="80" height="80"/>
+        <image name="open-icon" width="80" height="80"/>
+        <image name="send-button" width="111" height="54"/>
     </resources>
 </document>
