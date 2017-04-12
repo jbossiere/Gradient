@@ -13,8 +13,8 @@ import CoreLocation
 class ViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var locateMeBtn: UIImageView!
-    @IBOutlet weak var fab: UIImageView!
+    @IBOutlet weak var locateMeBtn: UIButton!
+    @IBOutlet weak var fab: UIButton!
     
     var locationManager : CLLocationManager!
     var userLocated = false
@@ -29,16 +29,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(locateMe(tapGestureRecognizer:)))
-        self.locateMeBtn.isUserInteractionEnabled = true
-        self.locateMeBtn.addGestureRecognizer(tapGestureRecognizer)
-        
         addPolyline()
         addPolygon()
     }
     
     //Re-locates the user's current location
-    func locateMe(tapGestureRecognizer: UITapGestureRecognizer) {
+    @IBAction func locateMe(_ sender: Any) {
         let annotations = [mapView.userLocation]
         mapView.showAnnotations(annotations, animated: true)
     }

@@ -24,14 +24,22 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-go-zx6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="current-location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="UUj-47-mgV">
-                                <rect key="frame" x="305" y="533" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fab" translatesAutoresizingMaskIntoConstraints="NO" id="haX-S9-MjR">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac3-IQ-tsb">
                                 <rect key="frame" x="300" y="587" width="69" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" image="fab"/>
+                                <connections>
+                                    <segue destination="OTo-ye-pwf" kind="presentation" id="Gl0-3T-bzL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4z-DC-tvc">
+                                <rect key="frame" x="304" y="533" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="current-location-icon"/>
+                                <connections>
+                                    <action selector="locateMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NVk-dY-XNW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -42,8 +50,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fab" destination="haX-S9-MjR" id="kFj-qz-pWx"/>
-                        <outlet property="locateMeBtn" destination="UUj-47-mgV" id="bsL-QF-29G"/>
+                        <outlet property="fab" destination="ac3-IQ-tsb" id="wr7-ye-MIE"/>
+                        <outlet property="locateMeBtn" destination="h4z-DC-tvc" id="GHa-PV-2wR"/>
                         <outlet property="mapView" destination="oEh-go-zx6" id="itt-SK-kxH"/>
                     </connections>
                 </viewController>
