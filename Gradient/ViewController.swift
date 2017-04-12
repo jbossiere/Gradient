@@ -7,17 +7,79 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locateMeBtn: UIImageView!
+    @IBOutlet weak var fab: UIImageView!
+    
+    var locationManager : CLLocationManager!
+    var userLocated = false
+    
+    let places = Places.getPlaces()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(locateMe(tapGestureRecognizer:)))
+        self.locateMeBtn.isUserInteractionEnabled = true
+        self.locateMeBtn.addGestureRecognizer(tapGestureRecognizer)
+        
+        addPolyline()
+        addPolygon()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //Re-locates the user's current location
+    func locateMe(tapGestureRecognizer: UITapGestureRecognizer) {
+        let annotations = [mapView.userLocation]
+        mapView.showAnnotations(annotations, animated: true)
+    }
+    
+    //Mapview updating user's location
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        if userLocated == false {
+            userLocated = true
+            let annotations = [mapView.userLocation]
+            mapView.showAnnotations(annotations, animated: true)
+        }
+    }
+    
+    //Mapview rendering polylines and polygons
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = UIColor.orange
+            renderer.lineWidth = 3
+            return renderer
+        } else if overlay is MKPolygon {
+            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
+            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+            renderer.lineWidth = 2
+            return renderer
+        }
+        return MKOverlayRenderer()
+    }
+    
+    
+    // Creating polylines and polygons
+    func addPolyline() {
+        var locations = places.map { $0.coordinate }
+        let polyline = MKPolyline(coordinates: &locations, count: locations.count - 1)
+        mapView?.add(polyline)
+    }
+    func addPolygon() {
+        var locations = places.map { $0.coordinate }
+        let polygon = MKPolygon(coordinates: &locations, count: locations.count-1)
+        mapView?.add(polygon)
+        
     }
 
 

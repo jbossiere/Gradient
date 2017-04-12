@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   places.plist
-   Gradient
-
-   Created by Julian Bossiere on 4/9/17.
-   Copyright (c) 2017 Julian Bossiere. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<array>
+	<dict>
+		<key>title</key>
+		<string>Udistrict 1</string>
+		<key>latitude</key>
+		<real>47.654156141</real>
+		<key>longitude</key>
+		<real>-122.31342165</real>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Udistrict 2</string>
+		<key>latitude</key>
+		<real>47.65497999300004</real>
+		<key>longitude</key>
+		<real>-122.31340012</real>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Udistrict 3</string>
+		<key>latitude</key>
+		<real>47.65541283600004</real>
+		<key>longitude</key>
+		<real>-122.3124946889999</real>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Udistrict 4</string>
+		<key>latitude</key>
+		<real>47.65591202600007</real>
+		<key>longitude</key>
+		<real>-122.312615062</real>
+	</dict>
+</array>
 </plist>

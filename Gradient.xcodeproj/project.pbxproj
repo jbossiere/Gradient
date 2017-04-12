@@ -14,6 +14,11 @@
 		E21887A51E9B3B890008C54C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21887A31E9B3B890008C54C /* LaunchScreen.storyboard */; };
 		E21887B01E9B3B890008C54C /* GradientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21887AF1E9B3B890008C54C /* GradientTests.swift */; };
 		E21887BB1E9B3B890008C54C /* GradientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21887BA1E9B3B890008C54C /* GradientUITests.swift */; };
+		E21887CA1E9B3BC90008C54C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21887C91E9B3BC90008C54C /* MapKit.framework */; };
+		E21887CC1E9B3D620008C54C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21887CB1E9B3D620008C54C /* CoreLocation.framework */; };
+		E21887CE1E9B588E0008C54C /* places.plist in Resources */ = {isa = PBXBuildFile; fileRef = E21887CD1E9B588E0008C54C /* places.plist */; };
+		E21887D01E9B5DDC0008C54C /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21887CF1E9B5DDC0008C54C /* Places.swift */; };
+		E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		E21887B61E9B3B890008C54C /* GradientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21887BA1E9B3B890008C54C /* GradientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUITests.swift; sourceTree = "<group>"; };
 		E21887BC1E9B3B890008C54C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E21887C91E9B3BC90008C54C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E21887CB1E9B3D620008C54C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E21887CD1E9B588E0008C54C /* places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = places.plist; sourceTree = "<group>"; };
+		E21887CF1E9B5DDC0008C54C /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21887CC1E9B3D620008C54C /* CoreLocation.framework in Frameworks */,
+				E21887CA1E9B3BC90008C54C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +93,7 @@
 				E21887AE1E9B3B890008C54C /* GradientTests */,
 				E21887B91E9B3B890008C54C /* GradientUITests */,
 				E21887981E9B3B890008C54C /* Products */,
+				E21887C81E9B3BC90008C54C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +110,14 @@
 		E21887991E9B3B890008C54C /* Gradient */ = {
 			isa = PBXGroup;
 			children = (
+				E2E7AA851E9EC29900BD1B41 /* View Controllers */,
 				E218879A1E9B3B890008C54C /* AppDelegate.swift */,
-				E218879C1E9B3B890008C54C /* ViewController.swift */,
 				E218879E1E9B3B890008C54C /* Main.storyboard */,
 				E21887A11E9B3B890008C54C /* Assets.xcassets */,
 				E21887A31E9B3B890008C54C /* LaunchScreen.storyboard */,
 				E21887A61E9B3B890008C54C /* Info.plist */,
+				E21887CD1E9B588E0008C54C /* places.plist */,
+				E21887CF1E9B5DDC0008C54C /* Places.swift */,
 			);
 			path = Gradient;
 			sourceTree = "<group>";
@@ -123,6 +138,24 @@
 				E21887BC1E9B3B890008C54C /* Info.plist */,
 			);
 			path = GradientUITests;
+			sourceTree = "<group>";
+		};
+		E21887C81E9B3BC90008C54C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E21887CB1E9B3D620008C54C /* CoreLocation.framework */,
+				E21887C91E9B3BC90008C54C /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2E7AA851E9EC29900BD1B41 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E218879C1E9B3B890008C54C /* ViewController.swift */,
+				E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +226,7 @@
 				TargetAttributes = {
 					E21887961E9B3B890008C54C = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 53NGYJBFW3;
 						ProvisioningStyle = Automatic;
 					};
 					E21887AA1E9B3B890008C54C = {
@@ -234,6 +268,7 @@
 			files = (
 				E21887A51E9B3B890008C54C /* LaunchScreen.storyboard in Resources */,
 				E21887A21E9B3B890008C54C /* Assets.xcassets in Resources */,
+				E21887CE1E9B588E0008C54C /* places.plist in Resources */,
 				E21887A01E9B3B890008C54C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E218879D1E9B3B890008C54C /* ViewController.swift in Sources */,
+				E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */,
 				E218879B1E9B3B890008C54C /* AppDelegate.swift in Sources */,
+				E21887D01E9B5DDC0008C54C /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,9 +449,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 53NGYJBFW3;
 				INFOPLIST_FILE = Gradient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = julianbossiere.Gradient;
+				PRODUCT_BUNDLE_IDENTIFIER = julianbossiere.GradientApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -424,9 +463,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 53NGYJBFW3;
 				INFOPLIST_FILE = Gradient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = julianbossiere.Gradient;
+				PRODUCT_BUNDLE_IDENTIFIER = julianbossiere.GradientApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -505,6 +546,7 @@
 				E21887C11E9B3B890008C54C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E21887C21E9B3B890008C54C /* Build configuration list for PBXNativeTarget "GradientTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +555,7 @@
 				E21887C41E9B3B890008C54C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E21887C51E9B3B890008C54C /* Build configuration list for PBXNativeTarget "GradientUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +564,7 @@
 				E21887C71E9B3B890008C54C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
