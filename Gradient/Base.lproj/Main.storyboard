@@ -168,6 +168,24 @@
                                     <action selector="selectionMade:" destination="OTo-ye-pwf" eventType="touchUpInside" id="ijY-Qh-H3Y"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EN-qN-4GS">
+                                <rect key="frame" x="1" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Thanks for the feedback!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uYz-54-RTI">
+                                        <rect key="frame" x="38" y="378" width="313" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="confirm" translatesAutoresizingMaskIntoConstraints="NO" id="xxo-Jk-PRT">
+                                        <rect key="frame" x="100" y="179" width="175" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,6 +198,7 @@
                     <connections>
                         <outlet property="busySelectionRing" destination="Irr-gr-qJg" id="aMn-II-EQ3"/>
                         <outlet property="busyTextView" destination="gal-51-RaI" id="tK9-dF-nfw"/>
+                        <outlet property="confirmNotificationView" destination="2EN-qN-4GS" id="Vif-Zs-9eM"/>
                         <outlet property="neutralSelectionRing" destination="4Bq-Vk-Hgs" id="rJK-eU-Yhb"/>
                         <outlet property="openSelectionRing" destination="Ig1-Yp-5vS" id="OhF-JH-zPm"/>
                         <outlet property="sendButton" destination="Mss-eg-l3i" id="DoY-5Y-Gxq"/>
@@ -194,6 +213,7 @@
         <image name="busy-icon" width="80" height="80"/>
         <image name="busy-selection" width="90" height="90"/>
         <image name="close-icon" width="22" height="22"/>
+        <image name="confirm" width="209" height="209"/>
         <image name="current-location-icon" width="64" height="64"/>
         <image name="fab" width="104" height="104"/>
         <image name="neutral-icon" width="80" height="80"/>

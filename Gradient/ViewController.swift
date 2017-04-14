@@ -25,7 +25,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         mapView.delegate = self
         mapView.showsUserLocation = true
-        
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         
@@ -36,7 +35,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     func ratingConfirm() {
-        print("shit bruh")
+      
     }
     
     //Re-locates the user's current location

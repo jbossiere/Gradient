@@ -15,6 +15,7 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var busySelectionRing: UIImageView!
     @IBOutlet weak var busyTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var confirmNotificationView: UIView!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class RatingViewController: UIViewController {
         self.openSelectionRing.isHidden = true
         self.busySelectionRing.isHidden = true
         self.sendButton.isEnabled = false
+        self.confirmNotificationView.alpha = 0
     }
     
     // Dismiss Modal
@@ -55,9 +57,17 @@ class RatingViewController: UIViewController {
 
     @IBAction func sendRating(_ sender: Any) {
         // Save the user rating
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "supBro"), object: nil)
-        dismiss(animated: true, completion: nil)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+                self.confirmNotificationView.alpha = 1
+        }, completion: { [weak self] finished in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self?.dismiss(animated: true, completion: nil)
+            }
+        })
+        
     }
+    
     /*
     // MARK: - Navigation
 
