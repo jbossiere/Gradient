@@ -31,6 +31,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         addPolyline()
         addPolygon()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.ratingConfirm), name: NSNotification.Name(rawValue: "supBro"), object: nil)
+    }
+    
+    func ratingConfirm() {
+        print("shit bruh")
     }
     
     //Re-locates the user's current location
