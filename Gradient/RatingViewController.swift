@@ -68,6 +68,14 @@ class RatingViewController: UIViewController {
         
     }
     
+    // Following two overrides lock app orientation portrait view
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     /*
     // MARK: - Navigation
 
