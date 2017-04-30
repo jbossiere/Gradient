@@ -18,6 +18,7 @@
 		E21887CC1E9B3D620008C54C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21887CB1E9B3D620008C54C /* CoreLocation.framework */; };
 		E21887CE1E9B588E0008C54C /* places.plist in Resources */ = {isa = PBXBuildFile; fileRef = E21887CD1E9B588E0008C54C /* places.plist */; };
 		E21887D01E9B5DDC0008C54C /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21887CF1E9B5DDC0008C54C /* Places.swift */; };
+		E2CC26B51EB5791C0078B033 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = E2CC26B41EB5791C0078B033 /* test.json */; };
 		E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		E21887CB1E9B3D620008C54C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E21887CD1E9B588E0008C54C /* places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = places.plist; sourceTree = "<group>"; };
 		E21887CF1E9B5DDC0008C54C /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		E2CC26B41EB5791C0078B033 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test.json; path = "../../../../Google Drive/16-17 Senior Year/2017-3/Capstone (1)/491/test.json"; sourceTree = "<group>"; };
+		E2CC26B61EB5817A0078B033 /* TestLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestLocation.gpx; sourceTree = "<group>"; };
 		E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +113,7 @@
 		E21887991E9B3B890008C54C /* Gradient */ = {
 			isa = PBXGroup;
 			children = (
+				E2CC26B31EB578810078B033 /* Hardcoded Data */,
 				E2E7AA851E9EC29900BD1B41 /* View Controllers */,
 				E218879A1E9B3B890008C54C /* AppDelegate.swift */,
 				E218879E1E9B3B890008C54C /* Main.storyboard */,
@@ -118,6 +122,7 @@
 				E21887A61E9B3B890008C54C /* Info.plist */,
 				E21887CD1E9B588E0008C54C /* places.plist */,
 				E21887CF1E9B5DDC0008C54C /* Places.swift */,
+				E2CC26B61EB5817A0078B033 /* TestLocation.gpx */,
 			);
 			path = Gradient;
 			sourceTree = "<group>";
@@ -147,6 +152,14 @@
 				E21887C91E9B3BC90008C54C /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2CC26B31EB578810078B033 /* Hardcoded Data */ = {
+			isa = PBXGroup;
+			children = (
+				E2CC26B41EB5791C0078B033 /* test.json */,
+			);
+			name = "Hardcoded Data";
 			sourceTree = "<group>";
 		};
 		E2E7AA851E9EC29900BD1B41 /* View Controllers */ = {
@@ -268,6 +281,7 @@
 			files = (
 				E21887A51E9B3B890008C54C /* LaunchScreen.storyboard in Resources */,
 				E21887A21E9B3B890008C54C /* Assets.xcassets in Resources */,
+				E2CC26B51EB5791C0078B033 /* test.json in Resources */,
 				E21887CE1E9B588E0008C54C /* places.plist in Resources */,
 				E21887A01E9B3B890008C54C /* Main.storyboard in Resources */,
 			);

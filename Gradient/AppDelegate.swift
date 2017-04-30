@@ -16,6 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+//        UserDefaults.standard.synchronize()
+//        
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        var vc: UIViewController
+//        
+//        if (UserDefaults.standard.value(forKey: "onboarded") as? Bool) == nil {
+//            // show the onboarding
+//            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+//        } else {
+//            // show the main screen
+//            vc = storyboard.instantiateInitialViewController()!
+//        }
+//        
+//        self.window?.rootViewController = vc
+//        self.window?.makeKeyAndVisible()
+            
         return true
     }
 
@@ -40,7 +59,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

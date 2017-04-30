@@ -32,6 +32,54 @@ class ViewController: UIViewController, MKMapViewDelegate {
         addPolygon()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.ratingConfirm), name: NSNotification.Name(rawValue: "supBro"), object: nil)
+        
+        
+        // For hardcoded data
+        do {
+            if let file = Bundle.main.url(forResource: "test", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                if let object = json as? [String: Any] {
+                    // json is a dictionary
+                    print(object)
+                } else if let object = json as? [Any] {
+                    // json is an array
+                    print(object)
+                } else {
+                    print("JSON is invalid")
+                }
+            } else {
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        // For API Data
+        let url = URL(string: "http://ec2-54-68-170-56.us-west-2.compute.amazonaws.com")!
+        let request = URLRequest(url: url)
+        let session = URLSession(
+            configuration: URLSessionConfiguration.default,
+            delegate: nil,
+            delegateQueue: OperationQueue.main
+        )
+        
+        let task : URLSessionDataTask = session.dataTask(
+            with: request as URLRequest,
+            completionHandler: { (data, response, error) in
+                if let data = data {
+                    if let responseDictionary = try! JSONSerialization.jsonObject(
+                        with: data, options: []) as? NSDictionary {
+                        print("responseDictionary: \(responseDictionary)")
+
+                        
+                    }
+                } else {
+                    print("error: \(error)")
+                }
+        });
+        task.resume()
+        
     }
     
     func ratingConfirm() {
