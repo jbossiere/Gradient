@@ -11,6 +11,161 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="Nx8-Nf-Qwl">
+            <objects>
+                <viewController id="kx1-LT-bmx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2RS-32-DzV"/>
+                        <viewControllerLayoutGuide type="bottom" id="DDJ-Lt-iEM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kpa-j4-GYz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="l87-wg-4nT">
+                                <rect key="frame" x="140" y="160" width="94" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNF-gB-PDq">
+                                <rect key="frame" x="57" y="339" width="262" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Welcome to Gradient.  We help you find street parking in Seattle using predictions based on historical civic data, and crowdsourced data.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXD-rV-ziP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-986.39999999999998" y="-540.17991004497753"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="upC-lJ-eJ3">
+            <objects>
+                <viewController id="bfZ-dZ-3dn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U7b-RX-eE8"/>
+                        <viewControllerLayoutGuide type="bottom" id="APw-8p-9Cl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1js-gM-bBE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stoplight" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-IE-Nc2">
+                                <rect key="frame" x="87" y="200" width="200" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Busy" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-aG-mdl">
+                                <rect key="frame" x="106" y="296" width="38" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Neutral" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-cI-7Nv">
+                                <rect key="frame" x="160" y="296" width="52" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Open" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qSE-9d-eMb">
+                                <rect key="frame" x="228" y="296" width="41" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="We use colors to indicate parking condition. Just like how stoplights tell us when we should stop and start our car." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-EJ-oHZ">
+                                <rect key="frame" x="56" y="391" width="262" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZN-pd-uIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-247.19999999999999" y="-540.17991004497753"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kjj-DR-Uxb">
+            <objects>
+                <viewController id="x6B-uv-ADw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RUp-pj-1nT"/>
+                        <viewControllerLayoutGuide type="bottom" id="ziF-R7-hVX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hfj-Vb-hic">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="characters" translatesAutoresizingMaskIntoConstraints="NO" id="aHG-TT-Ksq">
+                                <rect key="frame" x="71" y="136" width="232" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="We use colors to indicate parking condition. Just like how stoplights tell us when we should stop and start our car." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdf-HT-pkd">
+                                <rect key="frame" x="56" y="375" width="262" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JiN-nj-1aH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="-540"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QM5-jc-fBw">
+            <objects>
+                <viewController id="yqe-tH-F3k" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NSe-Ug-CH7"/>
+                        <viewControllerLayoutGuide type="bottom" id="HuC-sp-mdP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X8h-pl-MHW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Gradient is pretty simple, but you can use the controls to…  " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuO-1f-cTU">
+                                <rect key="frame" x="40" y="130" width="295" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="current-location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-Fu-iYB">
+                                <rect key="frame" x="40" y="235" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Re-center on your current location" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-ga-EiH">
+                                <rect key="frame" x="120" y="248" width="215" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Rate the parking to help other drivers" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bw-N9-M7B">
+                                <rect key="frame" x="120" y="369" width="215" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fab" translatesAutoresizingMaskIntoConstraints="NO" id="fuP-Xi-oHf">
+                                <rect key="frame" x="40" y="356" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooB-cf-Zet" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1200.8" y="-540.17991004497753"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="mapViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Gradient" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +339,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -212,14 +367,17 @@
     <resources>
         <image name="busy-icon" width="80" height="80"/>
         <image name="busy-selection" width="90" height="90"/>
+        <image name="characters" width="232" height="191"/>
         <image name="close-icon" width="22" height="22"/>
         <image name="confirm" width="209" height="209"/>
         <image name="current-location-icon" width="64" height="64"/>
         <image name="fab" width="104" height="104"/>
+        <image name="logo-blue" width="105" height="144"/>
         <image name="neutral-icon" width="80" height="80"/>
         <image name="neutral-selection" width="90" height="90"/>
         <image name="open-icon" width="80" height="80"/>
         <image name="open-selection" width="90" height="90"/>
         <image name="send-button" width="111" height="54"/>
+        <image name="stoplight" width="200" height="88"/>
     </resources>
 </document>
