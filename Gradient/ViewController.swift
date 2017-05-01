@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Gradient
 //
-//  Created by Julian Bossiere on 4/9/17.
+//  Created by Julian Bossiere
 //  Copyright © 2017 Julian Bossiere. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var locationManager : CLLocationManager!
     var userLocated = false
     
-    let places = Places.getPlaces()
+    let places: [Places] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,25 +35,25 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         
         // For hardcoded data
-        do {
-            if let file = Bundle.main.url(forResource: "test", withExtension: "json") {
-                let data = try Data(contentsOf: file)
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                if let object = json as? [String: Any] {
-                    // json is a dictionary
-                    print(object)
-                } else if let object = json as? [Any] {
-                    // json is an array
-                    print(object)
-                } else {
-                    print("JSON is invalid")
-                }
-            } else {
-                print("no file")
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
+//        do {
+//            if let file = Bundle.main.url(forResource: "test", withExtension: "json") {
+//                let data = try Data(contentsOf: file)
+//                let json = try JSONSerialization.jsonObject(with: data, options: [])
+//                if let object = json as? [String: Any] {
+//                    // json is a dictionary
+//                    print("dictionary: \(object)")
+//                } else if let object = json as? [Any] {
+//                    // json is an array
+//                    print("array: \(object)")
+//                } else {
+//                    print("JSON is invalid")
+//                }
+//            } else {
+//                print("no file")
+//            }
+//        } catch {
+//            print(error.localizedDescription)
+//        }
         
         // For API Data
         let url = URL(string: "http://ec2-54-68-170-56.us-west-2.compute.amazonaws.com")!
@@ -69,9 +69,20 @@ class ViewController: UIViewController, MKMapViewDelegate {
             completionHandler: { (data, response, error) in
                 if let data = data {
                     if let responseDictionary = try! JSONSerialization.jsonObject(
-                        with: data, options: []) as? NSDictionary {
+                    with: data, options: []) as? [NSDictionary] {
                         print("responseDictionary: \(responseDictionary)")
-
+                        let zones = responseDictionary["zones"] as? [[NSDictionary]]
+                        print("zones: \(zones!)")
+                        
+                        for i in 0 ..< zones!.count {
+                            let endpoint = zones?[i]["endpoint"] as? [NSDictionary]
+                            print("item: \(endpoint!)")
+                            for j in 0 ..< endpoint!.count {
+                                print(endpoint![j])
+                                let place = Places.getPlaces(dictionary: (endpoint![j]))
+                            }
+                        }
+                        
                         
                     }
                 } else {
@@ -102,31 +113,31 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     //Mapview rendering polylines and polygons
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = UIColor.orange
-            renderer.lineWidth = 3
-            return renderer
-        } else if overlay is MKPolygon {
-            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
-            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
-            renderer.lineWidth = 2
-            return renderer
-        }
-        return MKOverlayRenderer()
-    }
+//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//        if overlay is MKPolyline {
+//            let renderer = MKPolylineRenderer(overlay: overlay)
+//            renderer.strokeColor = UIColor.orange
+//            renderer.lineWidth = 3
+//            return renderer
+//        } else if overlay is MKPolygon {
+//            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
+//            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+//            renderer.lineWidth = 2
+//            return renderer
+//        }
+//        return MKOverlayRenderer()
+//    }
     
     
     // Creating polylines and polygons
     func addPolyline() {
         var locations = places.map { $0.coordinate }
-        let polyline = MKPolyline(coordinates: &locations, count: locations.count - 1)
+        let polyline = MKPolyline(coordinates: &locations, count: locations.count)
         mapView?.add(polyline)
     }
     func addPolygon() {
         var locations = places.map { $0.coordinate }
-        let polygon = MKPolygon(coordinates: &locations, count: locations.count-1)
+        let polygon = MKPolygon(coordinates: &locations, count: locations.count)
         mapView?.add(polygon)
         
     }

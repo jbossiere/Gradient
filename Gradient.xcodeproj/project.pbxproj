@@ -113,12 +113,12 @@
 			children = (
 				E2CC26B31EB578810078B033 /* Hardcoded Data */,
 				E2E7AA851E9EC29900BD1B41 /* View Controllers */,
+				E21887CF1E9B5DDC0008C54C /* Places.swift */,
 				E218879A1E9B3B890008C54C /* AppDelegate.swift */,
 				E218879E1E9B3B890008C54C /* Main.storyboard */,
 				E21887A11E9B3B890008C54C /* Assets.xcassets */,
 				E21887A31E9B3B890008C54C /* LaunchScreen.storyboard */,
 				E21887A61E9B3B890008C54C /* Info.plist */,
-				E21887CF1E9B5DDC0008C54C /* Places.swift */,
 				E2CC26B61EB5817A0078B033 /* TestLocation.gpx */,
 			);
 			path = Gradient;

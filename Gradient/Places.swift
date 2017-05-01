@@ -10,27 +10,63 @@ import MapKit
 
 
 @objc class Places: NSObject {
-    var title: String?
+    var name: String?
+    var severity: Int?
     var coordinate: CLLocationCoordinate2D
     
-    init(title: String?, coordinate: CLLocationCoordinate2D) {
-        self.title = title
+    init(name: String?, severity: Int?, coordinate: CLLocationCoordinate2D) {
+        self.name = name
+        self.severity = severity
         self.coordinate = coordinate
     }
     
-    static func getPlaces() -> [Places] {
-        guard let path = Bundle.main.path(forResource: "places", ofType: "plist"), let array = NSArray(contentsOfFile: path) else { return [] }
+    
+//    init(dictionary: NSDictionary) {
+//        print(dictionary)
+//        self.name = dictionary["name"] as? String
+//       
+//        print(self.name)
+//        print(dictionary["latitude"]!)
+//        print(dictionary["longitude"]!)
+//        
+//        let lat = dictionary["latitude"] as? Double ?? 0
+//        let long = dictionary["longitude"] as? Double ?? 0
+//       
+//        print(lat)
+//        print(long)
+//        
+//        self.severity = dictionary["severity"]! as? Int
+//        self.coordinate = CLLocationCoordinate2DMake(lat, long)
+//       
+//    }
+    
+    static func getPlaces(dictionary: NSDictionary) -> [Places] {
+//        guard let path = Bundle.main.path(forResource: "places", ofType: "json"), let array = NSArray(contentsOfFile: path) else { return [] }
         
         var places = [Places]()
         
-        for item in array {
-            let dictionary = item as? [String : Any]
-            let title = dictionary?["title"] as? String
-            let latitude = dictionary?["latitude"] as? Double ?? 0, longitude = dictionary?["longitude"] as? Double ?? 0
-            
-            let place = Places(title: title, coordinate: CLLocationCoordinate2DMake(latitude, longitude))
-            places.append(place)
-        }
+        print("dictionary: \(dictionary)")
+        let arr = dictionary as? [String: Any]
+        print("array: \(arr!)")
+        let name = dictionary["name"] as? String
+        let latitude = dictionary["latitude"] as? Double ?? 0
+        let longitude = dictionary["longitude"] as? Double ?? 0
+        let severity = dictionary["severity"] as? Int
+
+        let place = Places(name: name, severity: severity, coordinate: CLLocationCoordinate2DMake(latitude, longitude))
+        places.append(place)
+        
+//        for i in 0 ..< dictionary.count {
+//            print("dictionary: \(dictionary)")
+//            let arr = dictionary as? [String: Any]
+//            print("array: \(arr!)")
+//            let name = arr?["name"] as? String
+//            let latitude = dictionary?["latitude"] as? Double ?? 0, longitude = arr?["longitude"] as? Double ?? 0
+//            let severity = arr?["severity"] as? Int
+//            
+//            let place = Places(name: name, severity: severity, coordinate: CLLocationCoordinate2DMake(latitude, longitude))
+//            places.append(place)
+//        }
         
         return places as [Places]
     }
