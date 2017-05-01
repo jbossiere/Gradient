@@ -69,9 +69,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
             completionHandler: { (data, response, error) in
                 if let data = data {
                     if let responseDictionary = try! JSONSerialization.jsonObject(
-                    with: data, options: []) as? [NSDictionary] {
+                    with: data, options: []) as? [String: Any] {
                         print("responseDictionary: \(responseDictionary)")
-                        let zones = responseDictionary["zones"] as? [[NSDictionary]]
+                        let zones = responseDictionary["zones"] as? [[String: Any]]
                         print("zones: \(zones!)")
                         
                         for i in 0 ..< zones!.count {
