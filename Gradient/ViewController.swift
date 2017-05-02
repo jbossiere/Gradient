@@ -19,7 +19,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var locationManager : CLLocationManager!
     var userLocated = false
     
-    let places: [Places] = []
+    var places: [Places] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.showsUserLocation = true
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
-        
-        addPolyline()
-        addPolygon()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.ratingConfirm), name: NSNotification.Name(rawValue: "supBro"), object: nil)
         
@@ -68,21 +65,25 @@ class ViewController: UIViewController, MKMapViewDelegate {
             with: request as URLRequest,
             completionHandler: { (data, response, error) in
                 if let data = data {
-                    if let responseDictionary = try! JSONSerialization.jsonObject(
+                    if let response = try! JSONSerialization.jsonObject(
                     with: data, options: []) as? [String: Any] {
-                        print("responseDictionary: \(responseDictionary)")
-                        let zones = responseDictionary["zones"] as? [[String: Any]]
+                        print("response: \(response)")
+                        let zones = response["zones"] as? [[String: Any]]
                         print("zones: \(zones!)")
                         
                         for i in 0 ..< zones!.count {
-                            let endpoint = zones?[i]["endpoint"] as? [NSDictionary]
-                            print("item: \(endpoint!)")
+                            let endpoint = zones?[i]["endpoint"] as? [[String: Any]]
+                            print("endpoint: \(endpoint!)")
                             for j in 0 ..< endpoint!.count {
                                 print(endpoint![j])
-                                let place = Places.getPlaces(dictionary: (endpoint![j]))
+                                let place = Places.getPlaces(dictionary: (endpoint![j] as NSDictionary))
+                                print(place)
+                                self.places.append(place)
                             }
                         }
                         
+                        self.addPolyline()
+                        self.addPolygon()
                         
                     }
                 } else {
@@ -113,20 +114,20 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     //Mapview rendering polylines and polygons
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//        if overlay is MKPolyline {
-//            let renderer = MKPolylineRenderer(overlay: overlay)
-//            renderer.strokeColor = UIColor.orange
-//            renderer.lineWidth = 3
-//            return renderer
-//        } else if overlay is MKPolygon {
-//            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
-//            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
-//            renderer.lineWidth = 2
-//            return renderer
-//        }
-//        return MKOverlayRenderer()
-//    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = UIColor.orange
+            renderer.lineWidth = 3
+            return renderer
+        } else if overlay is MKPolygon {
+            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
+            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+            renderer.lineWidth = 2
+            return renderer
+        }
+        return MKOverlayRenderer()
+    }
     
     
     // Creating polylines and polygons
