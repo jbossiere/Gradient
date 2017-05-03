@@ -1,4 +1,4 @@
-[Imgur](http://i.imgur.com/AiTO5ah.png)
+[](http://i.imgur.com/AiTO5ah.png?raw=true)
 
 ## Overview
 
