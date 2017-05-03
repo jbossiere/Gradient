@@ -1,4 +1,4 @@
-# Gradient
+![Alt text](http://imgur.com/AiTO5ah "Optional title")
 
 ## Overview
 

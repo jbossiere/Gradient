@@ -19,8 +19,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var locationManager : CLLocationManager!
     var userLocated = false
     
-    var places: [Places] = []
-    var allPlaces: [[Places]] = []
+    var places: Array<Any> = []
+    var allPlaces: Array<Any> = []
+    
+    var severity: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,11 +76,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
                         print("zones: \(zones)")
                         
                         for i in 0 ..< zones!.count {
-                            let endpoint = zones?[i] as? [[String: Any]]
-                            print("endpoint yo: \(endpoint)")
-                            for j in 0 ..< endpoint!.count {
-                                let place = Places.getPlaces(dictionary: (endpoint![j] as NSDictionary))
-                                self.places.append(place)
+                            let blockface = zones?[i] as? NSArray
+                            print("blockface yo: \(blockface)")
+                            for j in 0 ..< blockface!.count {
+                                if let dict = blockface![j] as? NSDictionary {
+                                    print(dict)
+                                    let endpoint = Places.getPlaces(dictionary: dict)
+                                    self.places.append(endpoint)
+                                } else {
+                                    self.places.append(blockface![j])
+                                }
                             }
                             self.allPlaces.append(self.places)
                             self.places = []
@@ -137,10 +144,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
     func addPolyline() {
         for endpoints in allPlaces {
             let blockface = endpoints
+            // save severity value to external field in order to access it in the rendering method then if else that shit
+//            severity = blockface[0]
+            print(severity)
             print("blockface: \(blockface)")
-            var locations = blockface.map { $0.coordinate }
-            let polyline = MKPolyline(coordinates: &locations, count: locations.count)
-            mapView?.add(polyline)
+//            var locations = blockface.map { $0.coordinate }
+//            let polyline = MKPolyline(coordinates: &locations, count: locations.count)
+//            mapView?.add(polyline)
         }
     }
 //    func addPolygon() {
