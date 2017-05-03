@@ -1,4 +1,4 @@
-![Alt text](http://imgur.com/AiTO5ah "Optional title")
+[Imgur](http://i.imgur.com/AiTO5ah.png)
 
 ## Overview
 
