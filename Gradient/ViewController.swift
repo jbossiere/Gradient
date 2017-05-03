@@ -20,6 +20,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var userLocated = false
     
     var places: [Places] = []
+    var allPlaces: [[Places]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,22 +69,23 @@ class ViewController: UIViewController, MKMapViewDelegate {
                     if let response = try! JSONSerialization.jsonObject(
                     with: data, options: []) as? [String: Any] {
                         print("response: \(response)")
-                        let zones = response["zones"] as? [[String: Any]]
-                        print("zones: \(zones!)")
+                        print("zones in response: \(response["zones"])")
+                        let zones = response["zones"] as? NSArray
+                        print("zones: \(zones)")
                         
                         for i in 0 ..< zones!.count {
-                            let endpoint = zones?[i]["endpoint"] as? [[String: Any]]
-                            print("endpoint: \(endpoint!)")
+                            let endpoint = zones?[i] as? [[String: Any]]
+                            print("endpoint yo: \(endpoint)")
                             for j in 0 ..< endpoint!.count {
-                                print(endpoint![j])
                                 let place = Places.getPlaces(dictionary: (endpoint![j] as NSDictionary))
-                                print(place)
                                 self.places.append(place)
                             }
+                            self.allPlaces.append(self.places)
+                            self.places = []
                         }
                         
                         self.addPolyline()
-                        self.addPolygon()
+//                        self.addPolygon()
                         
                     }
                 } else {
@@ -114,34 +116,39 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     //Mapview rendering polylines and polygons
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = UIColor.orange
-            renderer.lineWidth = 3
-            return renderer
-        } else if overlay is MKPolygon {
-            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
-            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
-            renderer.lineWidth = 2
-            return renderer
-        }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKPolyline) -> MKOverlayRenderer {
+        print("overlay: \(overlay)")
+//        if overlay is MKPolyline {
+//            let renderer = MKPolylineRenderer(overlay: overlay)
+//            renderer.strokeColor = UIColor.red
+//            renderer.lineWidth = 3
+//            return renderer
+//        } else if overlay is MKPolygon {
+//            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
+//            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+//            renderer.lineWidth = 2
+//            return renderer
+//        }
         return MKOverlayRenderer()
     }
     
     
     // Creating polylines and polygons
     func addPolyline() {
-        var locations = places.map { $0.coordinate }
-        let polyline = MKPolyline(coordinates: &locations, count: locations.count)
-        mapView?.add(polyline)
+        for endpoints in allPlaces {
+            let blockface = endpoints
+            print("blockface: \(blockface)")
+            var locations = blockface.map { $0.coordinate }
+            let polyline = MKPolyline(coordinates: &locations, count: locations.count)
+            mapView?.add(polyline)
+        }
     }
-    func addPolygon() {
-        var locations = places.map { $0.coordinate }
-        let polygon = MKPolygon(coordinates: &locations, count: locations.count)
-        mapView?.add(polygon)
-        
-    }
+//    func addPolygon() {
+//        var locations = places.map { $0.coordinate }
+//        let polygon = MKPolygon(coordinates: &locations, count: locations.count)
+//        mapView?.add(polygon)
+//        
+//    }
     
     // Following two overrides lock app orientation portrait view
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
