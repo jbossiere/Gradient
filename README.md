@@ -1,4 +1,4 @@
-[](http://i.imgur.com/AiTO5ah.png?raw=true)
+## Gradient
 
 ## Overview
 
