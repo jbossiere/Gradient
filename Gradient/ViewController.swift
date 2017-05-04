@@ -19,10 +19,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var locationManager : CLLocationManager!
     var userLocated = false
     
-    var places: Array<Any> = []
+    var places: [Places] = []
+    var innerArray: Array<Any> = []
     var allPlaces: Array<Any> = []
     
-    var severity: Int?
+    var highlightColor: UIColor = UIColor.red
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,19 +77,22 @@ class ViewController: UIViewController, MKMapViewDelegate {
                         print("zones: \(zones)")
                         
                         for i in 0 ..< zones!.count {
-                            let blockface = zones?[i] as? NSArray
+                            let blockface = zones?[i] as? [String: Any]
                             print("blockface yo: \(blockface)")
-                            for j in 0 ..< blockface!.count {
-                                if let dict = blockface![j] as? NSDictionary {
+                            for endpoint in (blockface?.values)! {
+                                print(endpoint)
+                                if let dict = endpoint as? NSDictionary {
                                     print(dict)
                                     let endpoint = Places.getPlaces(dictionary: dict)
                                     self.places.append(endpoint)
                                 } else {
-                                    self.places.append(blockface![j])
+                                    self.innerArray.append(endpoint)
                                 }
                             }
-                            self.allPlaces.append(self.places)
+                            self.innerArray.append(self.places)
+                            self.allPlaces.append(self.innerArray)
                             self.places = []
+                            self.innerArray = []
                         }
                         
                         self.addPolyline()
@@ -123,35 +127,65 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     //Mapview rendering polylines and polygons
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKPolyline) -> MKOverlayRenderer {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         print("overlay: \(overlay)")
-//        if overlay is MKPolyline {
-//            let renderer = MKPolylineRenderer(overlay: overlay)
-//            renderer.strokeColor = UIColor.red
-//            renderer.lineWidth = 3
-//            return renderer
-//        } else if overlay is MKPolygon {
-//            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
-//            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
-//            renderer.lineWidth = 2
-//            return renderer
-//        }
+        if overlay is MKPolyline {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = highlightColor
+            renderer.lineWidth = 3
+            return renderer
+        } else if overlay is MKPolygon {
+            let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
+            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+            renderer.lineWidth = 2
+            return renderer
+        }
         return MKOverlayRenderer()
     }
     
     
     // Creating polylines and polygons
     func addPolyline() {
-        for endpoints in allPlaces {
-            let blockface = endpoints
-            // save severity value to external field in order to access it in the rendering method then if else that shit
-//            severity = blockface[0]
-            print(severity)
-            print("blockface: \(blockface)")
-//            var locations = blockface.map { $0.coordinate }
-//            let polyline = MKPolyline(coordinates: &locations, count: locations.count)
-//            mapView?.add(polyline)
+        for places in allPlaces {
+            print(places)
+            for item in places as! Array<Any> {
+                print("item: \(item)")
+                if item as? Int == 1 {
+                    highlightColor = UIColor.green
+                } else if item as? Int == 2 {
+                    highlightColor = UIColor.yellow
+                } else if item as? Int == 3 {
+                    highlightColor = UIColor.red
+                } else if let blockface = item as? [Places] {
+                    var locations = blockface.map { $0.coordinate }
+                    let polyline = MKPolyline(coordinates: &locations, count: locations.count)
+                    mapView?.add(polyline)
+                }
+            }
+//            var blockfaceArray = blockface as? Array<Any>
+//            for i in 0 ..< blockfaceArray!.count {
+//                if let endpoint = blockfaceArray?[i] as? Places {
+//                    print(endpoint)
+//                    self.places.append(endpoint)
+//                }
+//            }
+//            print(places)
+//            self.polylineArray.append(places)
+//            print("polylineArray: \(polylineArray)")
+//            self.places = []
+//            // save severity value to external field in order to access it in the rendering method then if else that shit
+////            severity = blockface[0]
+////            print(severity)
+////            print("blockface: \(blockface)")
+//            var locations = polylineArray.map { ($0 as AnyObject).coordinate }
+//            
+//            self.polylineArray = []
         }
+        print(places)
+//        print(polylineArray)
+//        var locations = polylineArray.map { $0.coordinate }
+//        let polyline = MKPolyline(coordinates: &locations, count: locations.count)
+//        mapView?.add(polyline)
     }
 //    func addPolygon() {
 //        var locations = places.map { $0.coordinate }
