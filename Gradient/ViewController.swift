@@ -23,7 +23,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var innerArray: Array<Any> = []
     var allPlaces: Array<Any> = []
     
-    var highlightColor: UIColor = UIColor.red
+    var highlightColor: UIColor = UIColor(red:1.00, green:0.25, blue:0.23, alpha:1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,11 +151,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
             for item in places as! Array<Any> {
                 print("item: \(item)")
                 if item as? Int == 1 {
-                    highlightColor = UIColor.green
+                    highlightColor = UIColor(red:0.47, green:0.89, blue:0.27, alpha:1.0)
                 } else if item as? Int == 2 {
-                    highlightColor = UIColor.yellow
+                    highlightColor = UIColor(red:1.00, green:0.82, blue:0.19, alpha:1.0)
                 } else if item as? Int == 3 {
-                    highlightColor = UIColor.red
+                    highlightColor = UIColor(red:1.00, green:0.25, blue:0.23, alpha:1.0)
                 } else if let blockface = item as? [Places] {
                     var locations = blockface.map { $0.coordinate }
                     let polyline = MKPolyline(coordinates: &locations, count: locations.count)
