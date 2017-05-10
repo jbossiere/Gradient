@@ -2,7 +2,7 @@
 //  OnboardingViewController.swift
 //  Gradient
 //
-//  Created by Julian Bossiere on 4/29/17.
+//  Created by Julian Bossiere on 5/10/17.
 //  Copyright © 2017 Julian Bossiere. All rights reserved.
 //
 
@@ -10,6 +10,15 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
+    @IBOutlet weak var conatinerView: UIView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let onboardingPageViewController = segue.destination as? RootPageViewController {
+            onboardingPageViewController.controlDelegate = self
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +30,6 @@ class OnboardingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func doneTouched(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "onboarded")
-        performSegue(withIdentifier: "toMainSegue", sender: nil)
-    }
 
     /*
     // MARK: - Navigation
@@ -36,4 +41,16 @@ class OnboardingViewController: UIViewController {
     }
     */
 
+}
+
+extension OnboardingViewController: RootPageViewControllerDelegate {
+    func rootPageViewController(rootPageViewController: RootPageViewController,
+                                didUpdatePageCount count: Int){
+        pageControl.numberOfPages = count
+    }
+    
+    func rootPageViewController(rootPageViewController: RootPageViewController,
+                                didUpdatePageIndex index: Int){
+        pageControl.currentPage = index
+    }
 }

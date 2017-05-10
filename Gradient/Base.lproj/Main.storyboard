@@ -89,6 +89,49 @@
             </objects>
             <point key="canvasLocation" x="-247.19999999999999" y="-540.17991004497753"/>
         </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="Nfa-YG-jx4">
+            <objects>
+                <viewController storyboardIdentifier="RootPage" id="PmM-OG-k1q" customClass="OnboardingViewController" customModule="Gradient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zaw-ft-bJJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="oa9-bn-bs4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Fl-9R-4cM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-t9-LyH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="Xby-gh-ZlU" kind="embed" id="coE-DG-r3g"/>
+                                </connections>
+                            </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="exq-bG-2CD">
+                                <rect key="frame" x="160" y="549" width="55" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.26256367559999999" green="0.57863634819999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oa9-bn-bs4" firstAttribute="top" secondItem="exq-bG-2CD" secondAttribute="bottom" constant="81" id="EY0-1P-TU3"/>
+                            <constraint firstItem="6Lh-t9-LyH" firstAttribute="leading" secondItem="2Fl-9R-4cM" secondAttribute="leading" id="SWP-pf-RRI"/>
+                            <constraint firstAttribute="trailing" secondItem="6Lh-t9-LyH" secondAttribute="trailing" id="X4W-Hr-egU"/>
+                            <constraint firstItem="exq-bG-2CD" firstAttribute="centerX" secondItem="2Fl-9R-4cM" secondAttribute="centerX" id="aMZ-Eq-AKn"/>
+                            <constraint firstItem="oa9-bn-bs4" firstAttribute="top" secondItem="6Lh-t9-LyH" secondAttribute="bottom" id="o1b-Y8-XCU"/>
+                            <constraint firstItem="6Lh-t9-LyH" firstAttribute="top" secondItem="2Fl-9R-4cM" secondAttribute="top" id="yar-hf-yqQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="conatinerView" destination="6Lh-t9-LyH" id="CMs-lb-1Xd"/>
+                        <outlet property="pageControl" destination="exq-bG-2CD" id="BTu-ph-k8u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfb-NZ-lDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-688.79999999999995" y="-1225.6371814092954"/>
+        </scene>
         <!--Root Page View Controller-->
         <scene sceneID="nKd-Ue-9Hp">
             <objects>

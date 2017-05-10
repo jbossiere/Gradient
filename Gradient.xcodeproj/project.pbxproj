@@ -19,6 +19,7 @@
 		E21887D01E9B5DDC0008C54C /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21887CF1E9B5DDC0008C54C /* Places.swift */; };
 		E2C733661EC2E23B00D7316B /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733651EC2E23B00D7316B /* RootPageViewController.swift */; };
 		E2C733681EC2EB6600D7316B /* OnboardingFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733671EC2EB6600D7316B /* OnboardingFourViewController.swift */; };
+		E2C7336A1EC3101100D7316B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733691EC3101100D7316B /* OnboardingViewController.swift */; };
 		E2CC26B51EB5791C0078B033 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = E2CC26B41EB5791C0078B033 /* test.json */; };
 		E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		E21887CF1E9B5DDC0008C54C /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		E2C733651EC2E23B00D7316B /* RootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
 		E2C733671EC2EB6600D7316B /* OnboardingFourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFourViewController.swift; sourceTree = "<group>"; };
+		E2C733691EC3101100D7316B /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E2CC26B41EB5791C0078B033 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test.json; path = "../../../../Google Drive/16-17 Senior Year/2017-3/Capstone (1)/491/test.json"; sourceTree = "<group>"; };
 		E2CC26B61EB5817A0078B033 /* TestLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestLocation.gpx; sourceTree = "<group>"; };
 		E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				E218879C1E9B3B890008C54C /* ViewController.swift */,
 				E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */,
 				E2C733671EC2EB6600D7316B /* OnboardingFourViewController.swift */,
+				E2C733691EC3101100D7316B /* OnboardingViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				E2C733681EC2EB6600D7316B /* OnboardingFourViewController.swift in Sources */,
 				E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */,
 				E2C733661EC2E23B00D7316B /* RootPageViewController.swift in Sources */,
+				E2C7336A1EC3101100D7316B /* OnboardingViewController.swift in Sources */,
 				E218879B1E9B3B890008C54C /* AppDelegate.swift in Sources */,
 				E21887D01E9B5DDC0008C54C /* Places.swift in Sources */,
 			);

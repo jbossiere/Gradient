@@ -5,11 +5,14 @@
 //  Created by Julian Bossiere on 5/9/17.
 //  Copyright © 2017 Julian Bossiere. All rights reserved.
 //
+// Used https://spin.atomicobject.com/2015/12/23/swift-uipageviewcontroller-tutorial/ and https://spin.atomicobject.com/2016/02/11/move-uipageviewcontroller-dots/ for onboarding
 
 import UIKit
 
-class RootPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class RootPageViewController: UIPageViewController {
 
+    weak var controlDelegate: RootPageViewControllerDelegate?
+    
     lazy var viewControllerList:[UIViewController] = {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -23,13 +26,6 @@ class RootPageViewController: UIPageViewController, UIPageViewControllerDataSour
         
     }()
     
-    let pageControl: UIPageControl = {
-        let pc = UIPageControl()
-        pc.pageIndicatorTintColor = .red
-        pc.currentPageIndicatorTintColor = UIColor.blue
-        return pc
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +35,8 @@ class RootPageViewController: UIPageViewController, UIPageViewControllerDataSour
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
+        
+        controlDelegate?.rootPageViewController(rootPageViewController: self, didUpdatePageCount: viewControllerList.count)
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,11 +46,28 @@ class RootPageViewController: UIPageViewController, UIPageViewControllerDataSour
                 view.frame = UIScreen.main.bounds
             } else if view is UIPageControl {
                 view.backgroundColor = .clear
+                let pageControl = view as? UIPageControl
+                pageControl?.currentPageIndicatorTintColor = UIColor(red:0.26, green:0.58, blue:1.00, alpha:1.0)
+                pageControl?.pageIndicatorTintColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
             }
         }
     }
     
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return viewControllerList.count
+//    }
+//    
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        guard let firstViewController = viewControllers?.first,
+//            let firstViewControllerIndex = viewControllerList.index(of: firstViewController) else {
+//                return 0
+//        }
+//        return firstViewControllerIndex
+//    }
+}
 
+extension RootPageViewController: UIPageViewControllerDataSource {
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         guard let vcIndex = viewControllerList.index(of: viewController) else {return nil}
@@ -78,16 +93,38 @@ class RootPageViewController: UIPageViewController, UIPageViewControllerDataSour
         
         return viewControllerList[nextIndex]
     }
-    
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return viewControllerList.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let firstViewController = viewControllers?.first,
-            let firstViewControllerIndex = viewControllerList.index(of: firstViewController) else {
-                return 0
+
+}
+
+extension RootPageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool) {
+        if let firstViewController = viewControllers?.first,
+            let index = viewControllerList.index(of: firstViewController) {
+            controlDelegate?.rootPageViewController(rootPageViewController: self, didUpdatePageIndex: index)
         }
-        return firstViewControllerIndex
     }
+}
+
+protocol RootPageViewControllerDelegate: class {
+    /**
+     Called when the number of pages is updated.
+     
+     - parameter tutorialPageViewController: the TutorialPageViewController instance
+     - parameter count: the total number of pages.
+     */
+    func rootPageViewController(rootPageViewController: RootPageViewController,
+                                    didUpdatePageCount count: Int)
+    
+    /**
+     Called when the current index is updated.
+     
+     - parameter tutorialPageViewController: the TutorialPageViewController instance
+     - parameter index: the index of the currently visible page.
+     */
+    func rootPageViewController(rootPageViewController: RootPageViewController,
+                                    didUpdatePageIndex index: Int)
+    
 }

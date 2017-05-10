@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (UserDefaults.standard.bool(forKey: "onboarded")) != true {
             // show the onboarding
             print(UserDefaults.standard.bool(forKey: "onboarded"))
-            vc = storyboard.instantiateViewController(withIdentifier: "RootPageViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "RootPage")
         } else {
             // show the main screen
             vc = storyboard.instantiateInitialViewController()!
