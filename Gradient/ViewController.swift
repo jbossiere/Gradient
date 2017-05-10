@@ -57,7 +57,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
 //        }
         
         // For API Data
-        let url = URL(string: "http://ec2-34-208-240-230.us-west-2.compute.amazonaws.com")
+//        let url = URL(string: "http://ec2-34-208-240-230.us-west-2.compute.amazonaws.com")
+        let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/formatted_json")
         let request = URLRequest(url: url!)
         let session = URLSession(
             configuration: URLSessionConfiguration.default,
@@ -76,13 +77,15 @@ class ViewController: UIViewController, MKMapViewDelegate {
                         
                         for i in 0 ..< zones!.count {
                             let blockface = zones?[i] as? [String: Any]
-//                            print("blockface yo: \(blockface)")
+                            print("blockface yo: \(blockface)")
                             for endpoint in (blockface?.values)! {
-//                                print(endpoint)
-                                if let dict = endpoint as? NSDictionary {
-//                                    print(dict)
-                                    let endpoint = Places.getPlaces(dictionary: dict)
-                                    self.places.append(endpoint)
+                                print(endpoint)
+                                if let arr = endpoint as? Array<Any> {
+                                    for dict in arr {
+                                        print(dict)
+                                        let endpoint = Places.getPlaces(dictionary: dict as! NSDictionary)
+                                        self.places.append(endpoint)
+                                    }
                                 } else {
                                     self.innerArray.append(endpoint)
                                 }

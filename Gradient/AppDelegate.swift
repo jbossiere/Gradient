@@ -19,22 +19,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
 //        UserDefaults.standard.synchronize()
-//        
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        var vc: UIViewController
-//        
-//        if (UserDefaults.standard.value(forKey: "onboarded") as? Bool) == nil {
-//            // show the onboarding
-//            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-//        } else {
-//            // show the main screen
-//            vc = storyboard.instantiateInitialViewController()!
-//        }
-//        
-//        self.window?.rootViewController = vc
-//        self.window?.makeKeyAndVisible()
-            
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc: UIViewController
+        
+//        if (UserDefaults.standard.value(forKey: "onboarded") as? Bool) != true {
+        print(UserDefaults.standard.bool(forKey: "onboarded"))
+        if (UserDefaults.standard.bool(forKey: "onboarded")) != true {
+            // show the onboarding
+            print(UserDefaults.standard.bool(forKey: "onboarded"))
+            vc = storyboard.instantiateViewController(withIdentifier: "RootPageViewController")
+        } else {
+            // show the main screen
+            vc = storyboard.instantiateInitialViewController()!
+        }
+
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

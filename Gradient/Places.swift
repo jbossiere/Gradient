@@ -20,8 +20,9 @@ import MapKit
     static func getPlaces(dictionary: NSDictionary) -> Places {
         
         print("dictionary: \(dictionary)")
-        let latitude = (dictionary["latitude"] as? NSString)?.doubleValue
-        let longitude = (dictionary["longitude"] as? NSString)?.doubleValue
+        print(dictionary["latitude"]!)
+        let latitude = dictionary["latitude"] as? Double
+        let longitude = dictionary["longitude"] as? Double
 //        let severity = Int((dictionary["severity"] as? String)!)
 
         let place = Places(coordinate: CLLocationCoordinate2DMake(latitude!, longitude!))
