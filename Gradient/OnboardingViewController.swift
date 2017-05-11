@@ -5,6 +5,7 @@
 //  Created by Julian Bossiere on 5/10/17.
 //  Copyright © 2017 Julian Bossiere. All rights reserved.
 //
+// Used https://spin.atomicobject.com/2015/12/23/swift-uipageviewcontroller-tutorial/ and https://spin.atomicobject.com/2016/02/11/move-uipageviewcontroller-dots/ for onboarding
 
 import UIKit
 
@@ -12,35 +13,34 @@ class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var conatinerView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var nextButton: UIButton!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let onboardingPageViewController = segue.destination as? RootPageViewController {
-            onboardingPageViewController.controlDelegate = self
+    var rootPageViewController: RootPageViewController? {
+        didSet {
+            print("didSet called")
+            rootPageViewController?.controlDelegate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let rootPageViewController = segue.destination as? RootPageViewController {
+            self.rootPageViewController = rootPageViewController
+        }
     }
-    */
-
+    
+    @IBAction func nextButtonTouched(_ sender: Any) {
+        if nextButton.currentTitle == "NEXT" {
+            rootPageViewController?.scrollToNextViewController()
+        } else {
+            UserDefaults.standard.set(true, forKey: "onboarded")
+            print(UserDefaults.standard.bool(forKey: "onboarded"))
+            performSegue(withIdentifier: "toMapView", sender: nil)
+        }
+    }
 }
 
 extension OnboardingViewController: RootPageViewControllerDelegate {
@@ -52,5 +52,10 @@ extension OnboardingViewController: RootPageViewControllerDelegate {
     func rootPageViewController(rootPageViewController: RootPageViewController,
                                 didUpdatePageIndex index: Int){
         pageControl.currentPage = index
+        if pageControl.currentPage == 3 {
+            self.nextButton.setTitle("DONE", for: .normal)
+        } else {
+            self.nextButton.setTitle("NEXT", for: .normal)
+        }
     }
 }

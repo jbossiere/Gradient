@@ -16,11 +16,11 @@ class OnboardingFourViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func onboardingDoneTouched(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: "onboarded")
-        print(UserDefaults.standard.bool(forKey: "onboarded"))
-        performSegue(withIdentifier: "toMapView", sender: nil)
-    }
+//    @IBAction func onboardingDoneTouched(_ sender: UIButton) {
+//        UserDefaults.standard.set(true, forKey: "onboarded")
+//        print(UserDefaults.standard.bool(forKey: "onboarded"))
+//        performSegue(withIdentifier: "toMapView", sender: nil)
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

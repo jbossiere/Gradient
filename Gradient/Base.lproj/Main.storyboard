@@ -112,6 +112,18 @@
                                 <color key="pageIndicatorTintColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.26256367559999999" green="0.57863634819999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSd-4U-twW">
+                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.26256367559999999" green="0.57863634819999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTouched:" destination="PmM-OG-k1q" eventType="touchUpInside" id="U7K-Gc-3NS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -125,7 +137,9 @@
                     </view>
                     <connections>
                         <outlet property="conatinerView" destination="6Lh-t9-LyH" id="CMs-lb-1Xd"/>
+                        <outlet property="nextButton" destination="zSd-4U-twW" id="OiF-fQ-Kv7"/>
                         <outlet property="pageControl" destination="exq-bG-2CD" id="BTu-ph-k8u"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMapView" id="cBS-Ng-nF5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfb-NZ-lDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,9 +244,6 @@
                             <constraint firstItem="HuC-sp-mdP" firstAttribute="top" secondItem="wKh-wO-XhK" secondAttribute="bottom" id="NU8-1a-4Jp"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMapView" id="MvQ-NQ-eDV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooB-cf-Zet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
