@@ -46,7 +46,7 @@ The team created a product pitch video for Gradient
 
 
 ## Contact
-**Julian Bossiere**🗿 [Portfolio](http://www.julianbossiere.com) | [Email](mailto:julianbossiere@gmail.com)
+**Julian Bossiere** [Portfolio](http://www.julianbossiere.com) | [Email](mailto:julianbossiere@gmail.com)
 
 **Simon Sang Ouk Kim** [Email](mailto:)
 
