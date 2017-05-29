@@ -15,14 +15,14 @@ Include decisions we made, including why you chose the stack you did
 
 Here's a walkthrough of implemented user stories:
 
+### Onboarding Screens
 <img src='http://i.imgur.com/INrm0om.gif' title='Onboarding Screens' width='' alt='Video Walkthrough' />
-Onboarding Screens
 
+### Map view
 <img src='http://i.imgur.com/INrm0om.gif' title='Map View' width='' alt='Video Walkthrough' />
-Map view
 
+### User Rating
 <img src='http://i.imgur.com/INrm0om.gif' title='User Rating' width='' alt='Video Walkthrough' />
-User Rating
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -35,10 +35,13 @@ The team created a product pitch video for Gradient
 
 
 ## Contact
-Julian Bossiere [Portfolio](http://www.julianbossiere.com) [Email](julianbossiere@gmail.com)
-Simon Sang Ouk Kim [Email]()
-James Lee [Email]()
-James Ned Bobo [Email]()
+Julian Bossiere [Portfolio](http://www.julianbossiere.com), <a href="mailto:julianbossiere@gmail.com>Email</a>
+
+Simon Sang Ouk Kim <a href="mailto:>Email</a>
+
+James Lee <a href="mailto:>Email</a>
+
+James Ned Bobo <a href="mailto:>Email</a>
 
 ## License
 
