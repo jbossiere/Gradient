@@ -17,7 +17,6 @@ class OnboardingViewController: UIViewController {
     
     var rootPageViewController: RootPageViewController? {
         didSet {
-            print("didSet called")
             rootPageViewController?.controlDelegate = self
         }
     }

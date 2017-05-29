@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gradient/ViewController.swift"
-            timestampString = "515981192.401304"
+            timestampString = "517733679.560443"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -70,31 +70,16 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Gradient.OnboardingViewController.rootPageViewController.getter : Swift.Optional&lt;Gradient.RootPageViewController&gt;"
+                  symbolName = "Gradient.OnboardingViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Gradient.OnboardingViewController"
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/OnboardingViewController.swift"
-                  timestampString = "516230376.849436"
+                  timestampString = "517733679.67828"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "35">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gradient.OnboardingViewController.rootPageViewController.setter : Swift.Optional&lt;Gradient.RootPageViewController&gt;"
-                  moduleName = "Gradient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/OnboardingViewController.swift"
-                  timestampString = "516230376.851525"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "65">
+                  offsetFromSymbolStart = "277">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -104,7 +89,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/OnboardingViewController.swift"
-                  timestampString = "516230376.857028"
+                  timestampString = "517733679.680428"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -137,7 +122,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
-                  timestampString = "516230376.866572"
+                  timestampString = "517733679.686031"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -152,12 +137,12 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
-                  timestampString = "516230376.868623"
+                  timestampString = "517733679.688615"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "54">
+                  offsetFromSymbolStart = "61">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -167,12 +152,27 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
-                  timestampString = "516230376.8708"
+                  timestampString = "517733679.690899"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
                   offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gradient.RootPageViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Gradient.RootPageViewController&gt;"
+                  moduleName = "Gradient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
+                  timestampString = "517733679.693104"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "43">
                </Location>
             </Locations>
          </BreakpointContent>

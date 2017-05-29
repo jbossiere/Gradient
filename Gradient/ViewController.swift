@@ -10,14 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locateMeBtn: UIButton!
     @IBOutlet weak var fab: UIButton!
     
     var locationManager : CLLocationManager!
-    var userLocated = false
     
     var places: [Places] = []
     var innerArray: Array<Any> = []
@@ -27,104 +26,100 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
-        mapView.showsUserLocation = true
+        self.mapView.delegate = self
+        self.mapView.showsUserLocation = true
         locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.ratingConfirm), name: NSNotification.Name(rawValue: "supBro"), object: nil)
         
-        
-        // For hardcoded data
-//        do {
-//            if let file = Bundle.main.url(forResource: "test", withExtension: "json") {
-//                let data = try Data(contentsOf: file)
-//                let json = try JSONSerialization.jsonObject(with: data, options: [])
-//                if let object = json as? [String: Any] {
-//                    // json is a dictionary
-//                    print("dictionary: \(object)")
-//                } else if let object = json as? [Any] {
-//                    // json is an array
-//                    print("array: \(object)")
-//                } else {
-//                    print("JSON is invalid")
-//                }
-//            } else {
-//                print("no file")
-//            }
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-        
-        // For API Data
+                // For API Data
 //        let url = URL(string: "http://ec2-34-208-240-230.us-west-2.compute.amazonaws.com")
-        let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/formatted_json")
-        let request = URLRequest(url: url!)
-        let session = URLSession(
-            configuration: URLSessionConfiguration.default,
-            delegate: nil,
-            delegateQueue: OperationQueue.main
-        )
-        
-        let task : URLSessionDataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-                if let data = data {
-                    if let response = try! JSONSerialization.jsonObject(
-                    with: data, options: []) as? [String: Any] {
-                        print("response: \(response)")
-//                        print("zones in response: \(response["zones"])")
-                        let zones = response["zones"] as? NSArray
+//        let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/formatted_json")
+//        let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/find_parking")
+//
+//        let request = URLRequest(url: url!)
+//        let session = URLSession(
+//            configuration: URLSessionConfiguration.default,
+//            delegate: nil,
+//            delegateQueue: OperationQueue.main
+//        )
+//        
+//        let task : URLSessionDataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
+//                if let data = data {
+//                    if let response = try! JSONSerialization.jsonObject(
+//                    with: data, options: []) as? [String: Any] {
+//                        print("response: \(response)")
+////                        print("zones in response: \(response["zones"])")
+//                        let zones = response["zones"] as? NSArray
 //                        print("zones: \(zones)")
-                        
-                        for i in 0 ..< zones!.count {
-                            let blockface = zones?[i] as? [String: Any]
-                            print("blockface yo: \(blockface)")
-                            for endpoint in (blockface?.values)! {
-                                print(endpoint)
-                                if let arr = endpoint as? Array<Any> {
-                                    for dict in arr {
-                                        print(dict)
-                                        let endpoint = Places.getPlaces(dictionary: dict as! NSDictionary)
-                                        self.places.append(endpoint)
-                                    }
-                                } else {
-                                    self.innerArray.append(endpoint)
-                                }
-                            }
-                            self.innerArray.append(self.places)
-                            self.allPlaces.append(self.innerArray)
-                            self.places = []
-                            self.innerArray = []
-                        }
-                        
-                        self.addPolyline()
-                        
-                    }
-                } else {
-                    print("error: \(error)")
-                }
-        });
-        task.resume()
+//                        
+//                        for i in 0 ..< zones!.count {
+//                            let blockface = zones?[i] as? [String: Any]
+//                            print("blockface yo: \(blockface)")
+//                            for endpoint in (blockface?.values)! {
+//                                print(endpoint)
+//                                if let arr = endpoint as? Array<Any> {
+//                                    for dict in arr {
+//                                        print(dict)
+//                                        let endpoint = Places.getPlaces(dictionary: dict as! NSDictionary)
+//                                        self.places.append(endpoint)
+//                                    }
+//                                } else {
+//                                    self.innerArray.append(endpoint)
+//                                }
+//                            }
+//                            self.innerArray.append(self.places)
+//                            self.allPlaces.append(self.innerArray)
+//                            self.places = []
+//                            self.innerArray = []
+//                        }
+//                        
+//                        self.addPolyline()
+//                        
+//                    }
+//                } else {
+//                    print("error: \(error)")
+//                }
+//        });
+//        task.resume()
         
     }
     
+    //Mapview updating user's location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            let location = locations[0]
+            let span: MKCoordinateSpan = MKCoordinateSpanMake(0.0035, 0.0035)
+            let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+            mapView.setRegion(region, animated: true)
+    }
+    
     func ratingConfirm() {
-      
+//     Function for when a user submits a rating
     }
     
     //Re-locates the user's current location
     @IBAction func locateMe(_ sender: Any) {
         let annotations = [mapView.userLocation]
         mapView.showAnnotations(annotations, animated: true)
+        locationManager.startUpdatingLocation()
     }
     
-    //Mapview updating user's location
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        if userLocated == false {
-            userLocated = true
-            let annotations = [mapView.userLocation]
-            mapView.showAnnotations(annotations, animated: true)
+    //Mapview stops updating location if user triggered region change
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        let view = mapView.subviews.first
+        for recognizer in (view?.gestureRecognizers)! {
+            if (recognizer.state == UIGestureRecognizerState.began || recognizer.state == UIGestureRecognizerState.ended) {
+                locationManager.stopUpdatingLocation()
+            }
         }
+        
     }
+
     
     //Mapview rendering polylines and polygons
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
