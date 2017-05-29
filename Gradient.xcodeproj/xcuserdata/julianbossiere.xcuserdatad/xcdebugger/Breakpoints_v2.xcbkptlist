@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gradient/ViewController.swift"
-            timestampString = "517733679.560443"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -74,7 +58,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/OnboardingViewController.swift"
-                  timestampString = "517733679.67828"
+                  timestampString = "517740212.777043"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -89,7 +73,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/OnboardingViewController.swift"
-                  timestampString = "517733679.680428"
+                  timestampString = "517740212.781603"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -122,7 +106,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
-                  timestampString = "517733679.686031"
+                  timestampString = "517740212.790455"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -137,7 +121,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
-                  timestampString = "517733679.688615"
+                  timestampString = "517740212.792891"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -152,7 +136,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
-                  timestampString = "517733679.690899"
+                  timestampString = "517740212.795858"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -167,7 +151,7 @@
                   moduleName = "Gradient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/julianbossiere/Documents/Xcode/Gradient/Gradient/RootPageViewController.swift"
-                  timestampString = "517733679.693104"
+                  timestampString = "517740212.798944"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -175,6 +159,22 @@
                   offsetFromSymbolStart = "43">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gradient/ViewController.swift"
+            timestampString = "517740182.416955"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
