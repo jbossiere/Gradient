@@ -27,13 +27,13 @@ Include decisions we made, including why you chose the stack you did
 Here's a walkthrough of implemented user stories:
 
 ### Onboarding Screens
-<img src='' title='Onboarding Screens' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/ddTLVZH.gif' title='Onboarding Screens' width='' alt='Video Walkthrough' />
 
 ### Map view
-<img src='' title='Map View' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/AgpqypY.gif' title='Map View' width='' alt='Video Walkthrough' />
 
 ### User Rating
-<img src='' title='User Rating' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/sJIUYdN.gif' title='User Rating' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
