@@ -15,12 +15,19 @@
 
 ## Overview
 
-**Gradient** is a crowdsourced street-parking finder built for iOS. It is based on data collected from the city of Seattle's parking meters, and bolstered by parking ratings from users.
+**Gradient** is a crowdsourced street-parking finder built for iOS. Predictions on parking availability are shown through color-highlighted streets on the map, and drivers help each other by rating the availabillity. It is based on the city of Seattle's civic parking records and supported by real-time user feedback to provide reliable, dynamic predictions on parking.
 
-It is being designed and built as part of the 2017 senior capstone for Informatics at the University of Washington, Seattle.
+It was designed and built as part of the 2017 senior capstone for Informatics at the University of Washington, Seattle.
+
+**NOTE: This is a proof-of-concept application and there are still parts that are not completely functional. As of June 2017, our capstone has ended and we do not plan to further build out the functionality.**
 
 ## Technology Used
 Include decisions we made, including why you chose the stack you did
+**Front-end platform:** iOS/Swift
+⋅⋅* iOS is well supported and has many built-in functionalities we could use
+⋅⋅* A team member had experience developing in Swift which made getting started on development smoother
+
+**Back-end platform:** Amazon Web Services (AWS)
 
 ## Functionality Walkthrough
 
