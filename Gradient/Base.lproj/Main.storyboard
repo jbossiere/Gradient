@@ -321,12 +321,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="How was the parking here?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnP-vf-76Y">
-                                <rect key="frame" x="78" y="172" width="218" height="37"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Are there any open spaces?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wnP-vf-76Y">
+                                <rect key="frame" x="55" y="172" width="267" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="0iX-0U-Y5o"/>
-                                    <constraint firstAttribute="width" constant="218" id="1B8-o2-bAJ"/>
+                                    <constraint firstAttribute="width" constant="267" id="1B8-o2-bAJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -342,15 +342,15 @@
                                     <action selector="dismissModal:" destination="OTo-ye-pwf" eventType="touchUpInside" id="B2W-6t-SM3"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Busy" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gal-51-RaI">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="No" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gal-51-RaI">
                                 <rect key="frame" x="99" y="337" width="42" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Open" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1O1-9g-M7a">
-                                <rect key="frame" x="233" y="337" width="45" height="33"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Yes" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1O1-9g-M7a">
+                                <rect key="frame" x="239" y="337" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -389,7 +389,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EN-qN-4GS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="1" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Thanks for the feedback!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uYz-54-RTI">
@@ -412,7 +412,7 @@
                             <constraint firstItem="3e7-IH-I84" firstAttribute="leading" secondItem="ZRK-wo-hiB" secondAttribute="leadingMargin" constant="8" id="1a6-M3-S0Y"/>
                             <constraint firstItem="3e7-IH-I84" firstAttribute="top" secondItem="qPP-Ep-mH3" secondAttribute="bottom" constant="16" id="koD-dw-W66"/>
                             <constraint firstItem="wnP-vf-76Y" firstAttribute="top" secondItem="qPP-Ep-mH3" secondAttribute="bottom" constant="152" id="l1f-jn-8KE"/>
-                            <constraint firstItem="wnP-vf-76Y" firstAttribute="centerX" secondItem="ZRK-wo-hiB" secondAttribute="centerX" id="oap-aZ-RzG"/>
+                            <constraint firstItem="wnP-vf-76Y" firstAttribute="centerX" secondItem="ZRK-wo-hiB" secondAttribute="centerX" constant="1" id="oap-aZ-RzG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -425,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpy-Jw-ASU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="222"/>
+            <point key="canvasLocation" x="957.60000000000002" y="221.73913043478262"/>
         </scene>
     </scenes>
     <resources>
