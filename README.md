@@ -23,6 +23,7 @@ It was designed and built as part of the 2017 senior capstone for Informatics at
 
 ## Technology Used
 Include decisions we made, including why you chose the stack you did
+
 **Front-end platform:** iOS/Swift
 ⋅⋅* iOS is well supported and has many built-in functionalities we could use
 ⋅⋅* A team member had experience developing in Swift which made getting started on development smoother
