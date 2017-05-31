@@ -33,7 +33,7 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/AgpqypY.gif' title='Map View' width='' alt='Video Walkthrough' />
 
 ### User Rating
-<img src='http://i.imgur.com/0TTDv6t.gif' title='User Rating' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/ZckCbAu.gif' title='User Rating' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
