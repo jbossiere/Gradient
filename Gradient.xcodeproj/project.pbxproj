@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0495D88629E398BEF8947283 /* Pods_Gradient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D0ACD67F038D4437850555 /* Pods_Gradient.framework */; };
+		A12A198966F5F2BBAF15E534 /* Pods_GradientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F2DF1CBA8E551ABCCAA308 /* Pods_GradientUITests.framework */; };
+		E20BF6341EDEB07A00A1B4D2 /* zones.json in Resources */ = {isa = PBXBuildFile; fileRef = E20BF6331EDEB07A00A1B4D2 /* zones.json */; };
 		E218879B1E9B3B890008C54C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218879A1E9B3B890008C54C /* AppDelegate.swift */; };
 		E218879D1E9B3B890008C54C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218879C1E9B3B890008C54C /* ViewController.swift */; };
 		E21887A01E9B3B890008C54C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218879E1E9B3B890008C54C /* Main.storyboard */; };
@@ -17,10 +20,9 @@
 		E21887CA1E9B3BC90008C54C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21887C91E9B3BC90008C54C /* MapKit.framework */; };
 		E21887CC1E9B3D620008C54C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21887CB1E9B3D620008C54C /* CoreLocation.framework */; };
 		E21887D01E9B5DDC0008C54C /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21887CF1E9B5DDC0008C54C /* Places.swift */; };
+		E2901425D295C6E77A381D05 /* Pods_GradientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0CAC63589359BC64DEF8A2 /* Pods_GradientTests.framework */; };
 		E2C733661EC2E23B00D7316B /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733651EC2E23B00D7316B /* RootPageViewController.swift */; };
-		E2C733681EC2EB6600D7316B /* OnboardingFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733671EC2EB6600D7316B /* OnboardingFourViewController.swift */; };
 		E2C7336A1EC3101100D7316B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733691EC3101100D7316B /* OnboardingViewController.swift */; };
-		E2CC26B51EB5791C0078B033 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = E2CC26B41EB5791C0078B033 /* test.json */; };
 		E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07CAFA077511D99FB9D3BAEE /* Pods-GradientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradientUITests/Pods-GradientUITests.release.xcconfig"; sourceTree = "<group>"; };
+		204129DADC664229189192A9 /* Pods-GradientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientTests/Pods-GradientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		92DA96494A8470F49E4BE3EA /* Pods-Gradient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gradient.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gradient/Pods-Gradient.release.xcconfig"; sourceTree = "<group>"; };
+		CD0CAC63589359BC64DEF8A2 /* Pods_GradientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D636D105FD42E6900BDF5017 /* Pods-GradientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientUITests/Pods-GradientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E20BF6331EDEB07A00A1B4D2 /* zones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zones.json; path = ../../../../Downloads/zones.json; sourceTree = "<group>"; };
 		E21887971E9B3B890008C54C /* Gradient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gradient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218879A1E9B3B890008C54C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E218879C1E9B3B890008C54C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,11 +67,13 @@
 		E21887CB1E9B3D620008C54C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E21887CF1E9B5DDC0008C54C /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		E2C733651EC2E23B00D7316B /* RootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
-		E2C733671EC2EB6600D7316B /* OnboardingFourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFourViewController.swift; sourceTree = "<group>"; };
 		E2C733691EC3101100D7316B /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		E2CC26B41EB5791C0078B033 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test.json; path = "../../../../Google Drive/16-17 Senior Year/2017-3/Capstone (1)/491/test.json"; sourceTree = "<group>"; };
 		E2CC26B61EB5817A0078B033 /* TestLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestLocation.gpx; sourceTree = "<group>"; };
 		E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		E8F2DF1CBA8E551ABCCAA308 /* Pods_GradientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D0ACD67F038D4437850555 /* Pods_Gradient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gradient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6057C51E5A8ED07C8BC814 /* Pods-Gradient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gradient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gradient/Pods-Gradient.debug.xcconfig"; sourceTree = "<group>"; };
+		FFCE6A10F2A595E07CC0152A /* Pods-GradientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradientTests/Pods-GradientTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 			files = (
 				E21887CC1E9B3D620008C54C /* CoreLocation.framework in Frameworks */,
 				E21887CA1E9B3BC90008C54C /* MapKit.framework in Frameworks */,
+				0495D88629E398BEF8947283 /* Pods_Gradient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2901425D295C6E77A381D05 /* Pods_GradientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,12 +99,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12A198966F5F2BBAF15E534 /* Pods_GradientUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FCF770DC9D1AD571C77967D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA6057C51E5A8ED07C8BC814 /* Pods-Gradient.debug.xcconfig */,
+				92DA96494A8470F49E4BE3EA /* Pods-Gradient.release.xcconfig */,
+				204129DADC664229189192A9 /* Pods-GradientTests.debug.xcconfig */,
+				FFCE6A10F2A595E07CC0152A /* Pods-GradientTests.release.xcconfig */,
+				D636D105FD42E6900BDF5017 /* Pods-GradientUITests.debug.xcconfig */,
+				07CAFA077511D99FB9D3BAEE /* Pods-GradientUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E218878E1E9B3B890008C54C = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +127,7 @@
 				E21887B91E9B3B890008C54C /* GradientUITests */,
 				E21887981E9B3B890008C54C /* Products */,
 				E21887C81E9B3BC90008C54C /* Frameworks */,
+				3FCF770DC9D1AD571C77967D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,7 +144,7 @@
 		E21887991E9B3B890008C54C /* Gradient */ = {
 			isa = PBXGroup;
 			children = (
-				E2CC26B31EB578810078B033 /* Hardcoded Data */,
+				E20BF6331EDEB07A00A1B4D2 /* zones.json */,
 				E2C733651EC2E23B00D7316B /* RootPageViewController.swift */,
 				E2E7AA851E9EC29900BD1B41 /* View Controllers */,
 				E21887CF1E9B5DDC0008C54C /* Places.swift */,
@@ -154,16 +181,11 @@
 			children = (
 				E21887CB1E9B3D620008C54C /* CoreLocation.framework */,
 				E21887C91E9B3BC90008C54C /* MapKit.framework */,
+				F4D0ACD67F038D4437850555 /* Pods_Gradient.framework */,
+				CD0CAC63589359BC64DEF8A2 /* Pods_GradientTests.framework */,
+				E8F2DF1CBA8E551ABCCAA308 /* Pods_GradientUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E2CC26B31EB578810078B033 /* Hardcoded Data */ = {
-			isa = PBXGroup;
-			children = (
-				E2CC26B41EB5791C0078B033 /* test.json */,
-			);
-			name = "Hardcoded Data";
 			sourceTree = "<group>";
 		};
 		E2E7AA851E9EC29900BD1B41 /* View Controllers */ = {
@@ -171,7 +193,6 @@
 			children = (
 				E218879C1E9B3B890008C54C /* ViewController.swift */,
 				E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */,
-				E2C733671EC2EB6600D7316B /* OnboardingFourViewController.swift */,
 				E2C733691EC3101100D7316B /* OnboardingViewController.swift */,
 			);
 			name = "View Controllers";
@@ -184,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E21887BF1E9B3B890008C54C /* Build configuration list for PBXNativeTarget "Gradient" */;
 			buildPhases = (
+				46CBC00B07588B6511706D36 /* [CP] Check Pods Manifest.lock */,
 				E21887931E9B3B890008C54C /* Sources */,
 				E21887941E9B3B890008C54C /* Frameworks */,
 				E21887951E9B3B890008C54C /* Resources */,
+				C45CEB014717C572E8187BE0 /* [CP] Embed Pods Frameworks */,
+				AFC3ED10222A632402B16E06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E21887C21E9B3B890008C54C /* Build configuration list for PBXNativeTarget "GradientTests" */;
 			buildPhases = (
+				1C39FADCFB4AFD4EF6AF6201 /* [CP] Check Pods Manifest.lock */,
 				E21887A71E9B3B890008C54C /* Sources */,
 				E21887A81E9B3B890008C54C /* Frameworks */,
 				E21887A91E9B3B890008C54C /* Resources */,
+				087866B9F4751072329A0C5C /* [CP] Embed Pods Frameworks */,
+				C487A5061DDC6C97B4866B0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,9 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E21887C51E9B3B890008C54C /* Build configuration list for PBXNativeTarget "GradientUITests" */;
 			buildPhases = (
+				92CF7838E8DABD49CAE39AC1 /* [CP] Check Pods Manifest.lock */,
 				E21887B21E9B3B890008C54C /* Sources */,
 				E21887B31E9B3B890008C54C /* Frameworks */,
 				E21887B41E9B3B890008C54C /* Resources */,
+				814C43E8C0A9E32250732109 /* [CP] Embed Pods Frameworks */,
+				5C28BCCD6433687DA399C0EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,8 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E21887A51E9B3B890008C54C /* LaunchScreen.storyboard in Resources */,
+				E20BF6341EDEB07A00A1B4D2 /* zones.json in Resources */,
 				E21887A21E9B3B890008C54C /* Assets.xcassets in Resources */,
-				E2CC26B51EB5791C0078B033 /* test.json in Resources */,
 				E21887A01E9B3B890008C54C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,13 +338,150 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		087866B9F4751072329A0C5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradientTests/Pods-GradientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C39FADCFB4AFD4EF6AF6201 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		46CBC00B07588B6511706D36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C28BCCD6433687DA399C0EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradientUITests/Pods-GradientUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		814C43E8C0A9E32250732109 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradientUITests/Pods-GradientUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92CF7838E8DABD49CAE39AC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AFC3ED10222A632402B16E06 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gradient/Pods-Gradient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C45CEB014717C572E8187BE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gradient/Pods-Gradient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C487A5061DDC6C97B4866B0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradientTests/Pods-GradientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E21887931E9B3B890008C54C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E218879D1E9B3B890008C54C /* ViewController.swift in Sources */,
-				E2C733681EC2EB6600D7316B /* OnboardingFourViewController.swift in Sources */,
 				E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */,
 				E2C733661EC2E23B00D7316B /* RootPageViewController.swift in Sources */,
 				E2C7336A1EC3101100D7316B /* OnboardingViewController.swift in Sources */,
@@ -469,6 +636,7 @@
 		};
 		E21887C01E9B3B890008C54C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA6057C51E5A8ED07C8BC814 /* Pods-Gradient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53NGYJBFW3;
@@ -483,6 +651,7 @@
 		};
 		E21887C11E9B3B890008C54C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92DA96494A8470F49E4BE3EA /* Pods-Gradient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53NGYJBFW3;
@@ -497,6 +666,7 @@
 		};
 		E21887C31E9B3B890008C54C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 204129DADC664229189192A9 /* Pods-GradientTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +681,7 @@
 		};
 		E21887C41E9B3B890008C54C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFCE6A10F2A595E07CC0152A /* Pods-GradientTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,6 +696,7 @@
 		};
 		E21887C61E9B3B890008C54C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D636D105FD42E6900BDF5017 /* Pods-GradientUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = GradientUITests/Info.plist;
@@ -538,6 +710,7 @@
 		};
 		E21887C71E9B3B890008C54C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07CAFA077511D99FB9D3BAEE /* Pods-GradientUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = GradientUITests/Info.plist;

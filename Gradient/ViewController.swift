@@ -21,6 +21,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var currLat: Double!
     var currLong: Double!
     var currDate: String!
+    var requestBody = ["datetime": "2017-04-13 18:20:00", "latitude": 47.659851, "longitude": -122.315459] as [String: Any]
+//    var requestBody: [String: Any] = [:]
     
     var places: [Places] = []
     var innerArray: Array<Any> = []
@@ -43,6 +45,51 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         currDate = formatter.string(from: Date() as Date)
+        
+//        COMMENT OUT FOR TESTING THIS IS TO USE THE HARD CODED ZONES JSON FILE
+        do {
+            if let file = Bundle.main.url(forResource: "zones", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                if let object = json as? [String: Any] {
+                    // json is a dictionary
+                    print("json is a dictionary")
+                    let zones = object["zones"]! as? [[String: Any]] ?? []
+                   
+                    for zone in zones {
+                        
+                        let blockface = zone as? [String: Any]
+                        print("blockface yo: \(blockface)")
+                        for endpoint in (blockface?.values)! {
+                            print(endpoint)
+                            if let arr = endpoint as? Array<Any> {
+                                for dict in arr {
+                                    print(dict)
+                                    let endpoint = Places.getPlaces(dictionary: dict as! NSDictionary)
+                                    self.places.append(endpoint)
+                                }
+                            } else {
+                                self.innerArray.append(endpoint)
+                            }
+                        }
+                        self.innerArray.append(self.places)
+                        self.allPlaces.append(self.innerArray)
+                        self.places = []
+                        self.innerArray = []
+                    }
+                    self.addPolyline()
+                } else if let object = json as? [Any] {
+                    // json is an array
+                    print(object)
+                } else {
+                    print("JSON is invalid")
+                }
+            } else {
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //Mapview updating user's location
@@ -54,66 +101,96 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
         mapView.setRegion(region, animated: true)
         
-        if (currLat != location.coordinate.latitude && currLong != location.coordinate.longitude) {
-            currLat = location.coordinate.latitude
-            currLong = location.coordinate.longitude
-        
-            // For API Data
-            //        let url = URL(string: "http://ec2-34-208-240-230.us-west-2.compute.amazonaws.com")
-            //        let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/formatted_json")
-            let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/find_parking")
-    
-            var request = URLRequest(url: url!)
-            request.httpMethod = "POST"
-            let postString = "datetime=\(currDate!)&latitude=\(currLat!)&longitude=\(currLong!)"
-            print(postString)
-            request.httpBody = postString.data(using: .utf8)
-            let session = URLSession(
-                configuration: URLSessionConfiguration.default,
-                delegate: nil,
-                delegateQueue: OperationQueue.main
-            )
-    
-            let task : URLSessionDataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-                    if let data = data {
-                        if let response = try! JSONSerialization.jsonObject(
-                        with: data, options: []) as? [String: Any] {
-                            print("response: \(response)")
-    //                        print("zones in response: \(response["zones"])")
-                            let zones = response["zones"] as? NSArray
-                            print("zones: \(zones)")
-    
-                            for i in 0 ..< zones!.count {
-                                let blockface = zones?[i] as? [String: Any]
-                                print("blockface yo: \(blockface)")
-                                for endpoint in (blockface?.values)! {
-                                    print(endpoint)
-                                    if let arr = endpoint as? Array<Any> {
-                                        for dict in arr {
-                                            print(dict)
-                                            let endpoint = Places.getPlaces(dictionary: dict as! NSDictionary)
-                                            self.places.append(endpoint)
-                                        }
-                                    } else {
-                                        self.innerArray.append(endpoint)
-                                    }
-                                }
-                                self.innerArray.append(self.places)
-                                self.allPlaces.append(self.innerArray)
-                                self.places = []
-                                self.innerArray = []
-                            }
-                            
-                            self.addPolyline()
-                            
-                        }
-                    } else {
-                        print("error: \(error)")
-                    }
-            });
-            task.resume()
-        }
-
+//        if (currLat != location.coordinate.latitude && currLong != location.coordinate.longitude) {
+//            currLat = location.coordinate.latitude
+//            currLong = location.coordinate.longitude
+////            requestBody["datetime"] = currDate
+////            requestBody["latitude"] = currLat
+////            requestBody["longitude"] = currLong
+//        
+//            // For API Data
+//            //        let url = URL(string: "http://ec2-34-208-240-230.us-west-2.compute.amazonaws.com")
+//            //        let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/formatted_json")
+//            let url = URL(string: "https://kek7dmzh50.execute-api.us-west-2.amazonaws.com/prod/find_parking")
+//            
+//            var request = URLRequest(url: url!)
+//            let session = URLSession(
+//                configuration: URLSessionConfiguration.default,
+//                delegate: nil,
+//                delegateQueue: OperationQueue.main
+//            )
+//            request.httpMethod = "POST"
+//            let jsonData = try? JSONSerialization.data(withJSONObject: requestBody, options: .prettyPrinted)
+////            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//            request.httpBody = jsonData
+//
+//    
+//            let task : URLSessionDataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
+//                    if let data = data {
+//                        if let response = try! JSONSerialization.jsonObject(
+//                        with: data, options: []) as? [String: Any] {
+////                            print("response: \(response)")
+////                            let body = response["body"] as? [String: Any]
+////                            print("body \(body)")
+//                            print (response["body"])
+//                            let zones = response["body"]! as? [[String: Any]] ?? []
+////                            let zones = response["zones"] as? NSArray
+////                            print("zones: \(zones)")
+//                            
+//                            for zone in zones {
+//                                
+//                                let blockface = zone as? [String: Any]
+//                                print("blockface yo: \(blockface)")
+//                                for endpoint in (blockface?.values)! {
+//                                    print(endpoint)
+//                                    if let arr = endpoint as? Array<Any> {
+//                                        for dict in arr {
+//                                            print(dict)
+//                                            let endpoint = Places.getPlaces(dictionary: dict as! NSDictionary)
+//                                            self.places.append(endpoint)
+//                                        }
+//                                    } else {
+//                                        self.innerArray.append(endpoint)
+//                                    }
+//                                }
+//                                self.innerArray.append(self.places)
+//                                self.allPlaces.append(self.innerArray)
+//                                self.places = []
+//                                self.innerArray = []
+//                            }
+//
+////                            for i in 0 ..< zones!.count {
+////                                
+////                                let blockface = zones?[i] as? [String: Any]
+////                                print("blockface yo: \(blockface)")
+////                                for endpoint in (blockface?.values)! {
+////                                    print(endpoint)
+////                                    if let arr = endpoint as? Array<Any> {
+////                                        for dict in arr {
+////                                            print(dict)
+////                                            let endpoint = Places.getPlaces(dictionary: dict as! NSDictionary)
+////                                            self.places.append(endpoint)
+////                                        }
+////                                    } else {
+////                                        self.innerArray.append(endpoint)
+////                                    }
+////                                }
+////                                self.innerArray.append(self.places)
+////                                self.allPlaces.append(self.innerArray)
+////                                self.places = []
+////                                self.innerArray = []
+////                            }
+//                            
+//                            self.addPolyline()
+//                            
+//                        }
+//                    } else {
+//                        print("error: \(error)")
+//                    }
+//            });
+//            task.resume()
+//        }
+//
     }
     
     func ratingConfirm() {
@@ -141,11 +218,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     //Mapview rendering polylines and polygons
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        print("overlay: \(overlay)")
         if overlay is MKPolyline {
             let renderer = MKPolylineRenderer(overlay: overlay)
             renderer.strokeColor = highlightColor
-            renderer.lineWidth = 3
+            renderer.lineWidth = 4
             return renderer
         } 
         return MKOverlayRenderer()
