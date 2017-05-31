@@ -48,11 +48,11 @@ The team created a product pitch video for Gradient
 ## Contact
 **Julian Bossiere** [Portfolio](http://www.julianbossiere.com) | [Email](mailto:julianbossiere@gmail.com)
 
-**Simon Sang Ouk Kim** [Email](mailto:)
+**Simon Sang Ouk Kim** [Email](mailto:slopsang1@gmail.com)
 
-**James Lee** [Email](mailto:)
+**James Lee** [Email](mailto:lee.james1990@gmail.com)
 
-**James Ned Bobo** [Email](mailto:)
+**James Ned Bobo** [Email](mailto:jnbobo@uw.edu)
 
 ## License
 
