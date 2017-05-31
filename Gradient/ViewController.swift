@@ -21,6 +21,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var currLat: Double!
     var currLong: Double!
     var currDate: String!
+//    HARDCODED REQUESTBODY FOR TESTING PURPOSES
     var requestBody = ["datetime": "2017-04-13 18:20:00", "latitude": 47.659851, "longitude": -122.315459] as [String: Any]
 //    var requestBody: [String: Any] = [:]
     
@@ -46,7 +47,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         currDate = formatter.string(from: Date() as Date)
         
-//        COMMENT OUT FOR TESTING THIS IS TO USE THE HARD CODED ZONES JSON FILE
+//        UNCOMMENT OUT FOR TESTING THIS IS TO USE THE HARD CODED ZONES JSON FILE
         do {
             if let file = Bundle.main.url(forResource: "zones", withExtension: "json") {
                 let data = try Data(contentsOf: file)
@@ -129,10 +130,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //                    if let data = data {
 //                        if let response = try! JSONSerialization.jsonObject(
 //                        with: data, options: []) as? [String: Any] {
-////                            print("response: \(response)")
+//                            print("response: \(response)")
 ////                            let body = response["body"] as? [String: Any]
 ////                            print("body \(body)")
-//                            print (response["body"])
+////                            print (response["body"])
 //                            let zones = response["body"]! as? [[String: Any]] ?? []
 ////                            let zones = response["zones"] as? NSArray
 ////                            print("zones: \(zones)")
@@ -159,6 +160,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //                                self.innerArray = []
 //                            }
 //
+////                            OLD WAY OF LOOPING THROUGH DELETE IF NOT NEEDED ANYMORE
 ////                            for i in 0 ..< zones!.count {
 ////                                
 ////                                let blockface = zones?[i] as? [String: Any]
@@ -231,9 +233,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     // Creating polylines
     func addPolyline() {
         for places in allPlaces {
-//            print(places)
             for item in places as! Array<Any> {
-//                print("item: \(item)")
                 if item as? Int == 0 {
                     highlightColor = UIColor(red:0.47, green:0.89, blue:0.27, alpha:1.0)
                 } else if item as? Int == 1 {

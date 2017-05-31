@@ -343,21 +343,14 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Busy" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gal-51-RaI">
-                                <rect key="frame" x="43" y="337" width="42" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Neutral" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zzw-90-393">
-                                <rect key="frame" x="159" y="337" width="58" height="33"/>
+                                <rect key="frame" x="99" y="337" width="42" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Open" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1O1-9g-M7a">
-                                <rect key="frame" x="290" y="337" width="45" height="33"/>
+                                <rect key="frame" x="233" y="337" width="45" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -372,35 +365,23 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="busy-selection" translatesAutoresizingMaskIntoConstraints="NO" id="Irr-gr-qJg">
-                                <rect key="frame" x="19" y="244" width="90" height="90"/>
+                                <rect key="frame" x="75" y="244" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="open-selection" translatesAutoresizingMaskIntoConstraints="NO" id="Ig1-Yp-5vS">
-                                <rect key="frame" x="267" y="244" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="neutral-selection" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-Vk-Hgs">
-                                <rect key="frame" x="143" y="244" width="90" height="90"/>
+                                <rect key="frame" x="210" y="244" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FA-Aa-Vj4">
-                                <rect key="frame" x="24" y="249" width="80" height="80"/>
+                                <rect key="frame" x="80" y="249" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="busy-icon"/>
                                 <connections>
                                     <action selector="selectionMade:" destination="OTo-ye-pwf" eventType="touchUpInside" id="Ret-It-wPB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysK-tY-Amj">
-                                <rect key="frame" x="148" y="249" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="neutral-icon"/>
-                                <connections>
-                                    <action selector="selectionMade:" destination="OTo-ye-pwf" eventType="touchUpInside" id="g7a-p6-gCs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsx-nS-wnv">
-                                <rect key="frame" x="272" y="249" width="80" height="80"/>
+                                <rect key="frame" x="215" y="249" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="open-icon"/>
                                 <connections>
@@ -408,7 +389,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EN-qN-4GS">
-                                <rect key="frame" x="1" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Thanks for the feedback!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uYz-54-RTI">
@@ -438,7 +419,6 @@
                         <outlet property="busySelectionRing" destination="Irr-gr-qJg" id="aMn-II-EQ3"/>
                         <outlet property="busyTextView" destination="gal-51-RaI" id="tK9-dF-nfw"/>
                         <outlet property="confirmNotificationView" destination="2EN-qN-4GS" id="Vif-Zs-9eM"/>
-                        <outlet property="neutralSelectionRing" destination="4Bq-Vk-Hgs" id="rJK-eU-Yhb"/>
                         <outlet property="openSelectionRing" destination="Ig1-Yp-5vS" id="OhF-JH-zPm"/>
                         <outlet property="sendButton" destination="Mss-eg-l3i" id="DoY-5Y-Gxq"/>
                     </connections>
@@ -457,8 +437,6 @@
         <image name="current-location-icon" width="64" height="64"/>
         <image name="fab" width="104" height="104"/>
         <image name="logo-blue" width="105" height="144"/>
-        <image name="neutral-icon" width="80" height="80"/>
-        <image name="neutral-selection" width="90" height="90"/>
         <image name="open-icon" width="80" height="80"/>
         <image name="open-selection" width="90" height="90"/>
         <image name="send-button" width="111" height="54"/>
