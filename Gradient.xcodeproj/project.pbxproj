@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0495D88629E398BEF8947283 /* Pods_Gradient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D0ACD67F038D4437850555 /* Pods_Gradient.framework */; };
 		A12A198966F5F2BBAF15E534 /* Pods_GradientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F2DF1CBA8E551ABCCAA308 /* Pods_GradientUITests.framework */; };
-		E20BF6341EDEB07A00A1B4D2 /* zones.json in Resources */ = {isa = PBXBuildFile; fileRef = E20BF6331EDEB07A00A1B4D2 /* zones.json */; };
 		E218879B1E9B3B890008C54C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218879A1E9B3B890008C54C /* AppDelegate.swift */; };
 		E218879D1E9B3B890008C54C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218879C1E9B3B890008C54C /* ViewController.swift */; };
 		E21887A01E9B3B890008C54C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218879E1E9B3B890008C54C /* Main.storyboard */; };
@@ -21,6 +20,7 @@
 		E21887CC1E9B3D620008C54C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21887CB1E9B3D620008C54C /* CoreLocation.framework */; };
 		E21887D01E9B5DDC0008C54C /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21887CF1E9B5DDC0008C54C /* Places.swift */; };
 		E2901425D295C6E77A381D05 /* Pods_GradientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0CAC63589359BC64DEF8A2 /* Pods_GradientTests.framework */; };
+		E290B34D1EE08F3B00D2F006 /* zones.json in Resources */ = {isa = PBXBuildFile; fileRef = E290B34C1EE08F3B00D2F006 /* zones.json */; };
 		E2C733661EC2E23B00D7316B /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733651EC2E23B00D7316B /* RootPageViewController.swift */; };
 		E2C7336A1EC3101100D7316B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C733691EC3101100D7316B /* OnboardingViewController.swift */; };
 		E2E7AA841E9EC29400BD1B41 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7AA831E9EC29400BD1B41 /* RatingViewController.swift */; };
@@ -49,7 +49,6 @@
 		92DA96494A8470F49E4BE3EA /* Pods-Gradient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gradient.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gradient/Pods-Gradient.release.xcconfig"; sourceTree = "<group>"; };
 		CD0CAC63589359BC64DEF8A2 /* Pods_GradientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D636D105FD42E6900BDF5017 /* Pods-GradientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientUITests/Pods-GradientUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E20BF6331EDEB07A00A1B4D2 /* zones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zones.json; path = ../../../../Downloads/zones.json; sourceTree = "<group>"; };
 		E21887971E9B3B890008C54C /* Gradient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gradient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218879A1E9B3B890008C54C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E218879C1E9B3B890008C54C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		E21887C91E9B3BC90008C54C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E21887CB1E9B3D620008C54C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E21887CF1E9B5DDC0008C54C /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		E290B34C1EE08F3B00D2F006 /* zones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zones.json; sourceTree = "<group>"; };
 		E2C733651EC2E23B00D7316B /* RootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
 		E2C733691EC3101100D7316B /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E2CC26B61EB5817A0078B033 /* TestLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestLocation.gpx; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		E21887991E9B3B890008C54C /* Gradient */ = {
 			isa = PBXGroup;
 			children = (
-				E20BF6331EDEB07A00A1B4D2 /* zones.json */,
+				E290B34C1EE08F3B00D2F006 /* zones.json */,
 				E2C733651EC2E23B00D7316B /* RootPageViewController.swift */,
 				E2E7AA851E9EC29900BD1B41 /* View Controllers */,
 				E21887CF1E9B5DDC0008C54C /* Places.swift */,
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E21887A51E9B3B890008C54C /* LaunchScreen.storyboard in Resources */,
-				E20BF6341EDEB07A00A1B4D2 /* zones.json in Resources */,
+				E290B34D1EE08F3B00D2F006 /* zones.json in Resources */,
 				E21887A21E9B3B890008C54C /* Assets.xcassets in Resources */,
 				E21887A01E9B3B890008C54C /* Main.storyboard in Resources */,
 			);
