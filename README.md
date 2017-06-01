@@ -33,6 +33,7 @@ It was designed and built as part of the 2017 senior capstone for Informatics at
   * RootPageViewController - sets up and manages the page views used for the onboarding screens
   * TestLocation.pgx - a test coordinate that is used to simulate the user standing on University Way
   * ViewController.swift - controls the functionality on the main map view, including constantly checking for updates on user location, drawing the highlight layers onto the map and requesting the data from the back-end/parsing that data
+  * zones.json - test json used for demo purposes during capstone night
 
 ## Technology Used
 Include decisions we made, including why you chose the stack you did
