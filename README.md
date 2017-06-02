@@ -43,6 +43,11 @@ Include decisions we made, including why you chose the stack you did
   * A team member had experience developing in Swift which made getting started on development smoother
 
 **Back-end platform:** Amazon Web Services (AWS)
+  * Machine learning model, and blockface information were stored in a free-tier RDS instance running MySQL. This was the most cost-effective option for implementing our machine learning model. Which cacheing results with a server, or connecting lambda functions to S3 (Simple Storage Service) buckets may have been viable options, the the scalability and performance of our current implementation were simple and readily met our needs.
+  * stored procedures are used in the database to retrieve narby parking spaces and their severity level, and upsert user feedback. User input is implicitly parameterized when using stored procedures, which helps to prevent script injection. 
+  * Server-less Lambda Functions connect to the MySQL instance and call stored procedured. Lambda functinos are much cheaper to run than full EC2 (Elastic Cloud Computing) instances.   
+  * API gateways are used to trigger the Lambda Functions and pass-on parameters using POST requests. API gateways use TLS by default, meaning that the parameters in the request body of a POST request are encrypted, ensuring the anonymity of users. API gateways also allow us to configure user authentication/verification on the fly. Meaning that we could quickly and easily integrate user accounts, or api keys in the future. 
+  * The 3 main components are contained within an AWS VPC (Virtual Private Cloud) ensuring that only the API gateway is outward facing / publicly accessible. VPCs also allow us to rapidly scale up our back end by mirroring our database and lambda functions in multiple subnets, and linking them to geographic areas as a means of load balancing.  
 
 ## Functionality Walkthrough
 
@@ -74,7 +79,7 @@ The team created a product pitch video for Gradient
 
 **James Lee** [Email](mailto:lee.james1990@gmail.com)
 
-**James Ned Bobo** [Portfolio](https://students.washington.edu/jnbobo/NewsPortfolio/index.php#/home) | [Email](mailto:jnbobo@uw.edu)
+**James Ned Bobo** [Portfolio](https://students.washington.edu/jnbobo) | [Email](mailto:jnbobo@uw.edu)
 
 ## License
 
