@@ -35,17 +35,19 @@ It was designed and built as part of the 2017 senior capstone for Informatics at
   * ViewController.swift - controls the functionality on the main map view, including constantly checking for updates on user location, drawing the highlight layers onto the map and requesting the data from the back-end/parsing that data
   * zones.json - test json used for demo purposes during capstone night
 
-## Technology Used
-Include decisions we made, including why you chose the stack you did
+**Backend Code**
+  * Lambda Functions - functions that take care of finding nearby parking and integrating user feedback
+  * SQLfiles - server side database code
 
+## Technology Used
 **Front-end platform:** iOS/Swift
   * iOS is well supported and has many usable built-in functionalities 
   * A team member had experience developing in Swift which made getting started on development smoother
 
 **Back-end platform:** Amazon Web Services (AWS)
-  * 2-factor Nearest-Neighbor machine learning model was used to make our predictions. This was the most accessible machine learning algorithm for us to implement. It offers a high degree of accuracy and can quickly be queried by a large number of users. It can also quickly integrate user feedback. 
+  * 2-factor nearest-neighbor machine learning model was used to make our predictions. This was the most accessible machine learning algorithm for us to implement. It offers a high degree of accuracy and can quickly be queried by a large number of users. It can also quickly integrate user feedback. 
   * Machine learning model, and blockface information were stored in a free-tier RDS instance running MySQL. This was the most cost-effective option for implementing our machine learning model. Which cacheing results with a server, or connecting lambda functions to S3 (Simple Storage Service) buckets may have been viable options, the the scalability and performance of our current implementation were simple and readily met our needs. (for example, the table in our db that acts as our machine learning model has over 10,000 rows, and takes on average ~200ms to query, including latency caused by the API gateway and Lambda Function).
-  * stored procedures are used in the database to retrieve narby parking spaces and their severity level, and upsert user feedback. User input is implicitly parameterized when using stored procedures, which helps to prevent script injection. 
+  * stored procedures are used in the database to retrieve nearby parking spaces and their severity level, and insert user feedback. User input is implicitly parameterized when using stored procedures, which helps to prevent script injection. 
   * Server-less Lambda Functions connect to the MySQL instance and call stored procedured. Lambda functinos are much cheaper to run than full EC2 (Elastic Cloud Computing) instances.   
   * API gateways are used to trigger the Lambda Functions and pass-on parameters using POST requests. API gateways use TLS by default, meaning that the parameters in the request body of a POST request are encrypted, ensuring the anonymity of users. API gateways also allow us to configure user authentication/verification on the fly. Meaning that we could quickly and easily integrate user accounts, or api keys in the future. 
   * The 3 main components are contained within an AWS VPC (Virtual Private Cloud) ensuring that only the API gateway is outward facing / publicly accessible. VPCs also allow us to rapidly scale up our back end by mirroring our database and lambda functions in multiple subnets, and linking them to geographic areas as a means of load balancing.  
