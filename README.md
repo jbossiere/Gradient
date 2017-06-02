@@ -24,7 +24,7 @@ It was designed and built as part of the 2017 senior capstone for Informatics at
 **NOTE: This is a proof-of-concept application and there are still parts that are not completely functional. As of June 2017, our capstone has ended and we do not plan to further build out the functionality.**
 
 ## Repo Contents
-**Gradient Xcode Project** (The code can be found in the folder called "Gradient")
+**Xcode (frontend) Code** (The code can be found in the folder called "Gradient")
   * Assets.xcassets - image assets like icon images, button images, etc
   * Info.plist - property list for the project
   * OnboardingViewController.swif - controls the onboarding screen functionality
